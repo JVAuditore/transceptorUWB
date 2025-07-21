@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="63" Path="D:/UNB_HD/TCC/tcc_Felix_Ameixa/Projeto/Auditore/UWB_PHY/UWB_PHY.xpr">
+<Project Product="Vivado" Version="7" Minor="63" Path="D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="e30ee34c10cb4deb8a8ad2b721d42c36"/>
@@ -43,6 +43,7 @@
     <Option Name="SimulatorGccVersionVCS" Val="9.2.0"/>
     <Option Name="SimulatorGccVersionRiviera" Val="9.3.0"/>
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
+    <Option Name="SimulatorLanguage" Val="Verilog"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
@@ -58,7 +59,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="5"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -91,7 +92,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/src/bch_decoder.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/bch_decoder.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/bch_decoder.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -100,7 +101,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/bch_encoder.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/bch_encoder.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/bch_encoder.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -109,7 +110,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/chien_search.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/chien_search.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/chien_search.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -118,7 +119,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/deinterleaver.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/deinterleaver.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/deinterleaver.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -127,7 +128,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/hcs.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/hcs.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/hcs.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -136,7 +137,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/interleaver.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/interleaver.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/interleaver.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -145,7 +146,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/kes.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/kes.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/kes.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -154,7 +155,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/mult_bch_63_51.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/mult_bch_63_51.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/mult_bch_63_51.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -163,7 +164,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/mult_mod.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/mult_mod.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/mult_mod.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -172,7 +173,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/receiver.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/receiver.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/receiver.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -181,7 +182,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/receiver_a.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/receiver_a.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/receiver_a.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -190,7 +191,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/receiver_b.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/receiver_b.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/receiver_b.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -199,7 +200,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/reg_d.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/reg_d.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/reg_d.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -208,7 +209,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/scrambler.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/scrambler.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/scrambler.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -217,7 +218,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/shift_reg.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/shift_reg.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/shift_reg.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -226,16 +227,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_interleaver.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/shift_reg_interleaver.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_var.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/shift_reg_var.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/shift_reg_interleaver.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -244,16 +236,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/shr_detector.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/shr_detector.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/spi.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/spi.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/shr_detector.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -262,7 +245,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/syndrome_calc.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/syndrome_calc.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/syndrome_calc.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -271,126 +254,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/transmitter.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/transmitter.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/uwb_phy.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/uwb_phy.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_shr.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/shift_reg_shr.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/ice40up5k_spram.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/ice40up5k_spram.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/picorv32.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/picorv32.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/picosoc.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/picosoc.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/picosoc_top.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/picosoc_top.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/reg_addr.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/reg_addr.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/simpleuart.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/simpleuart.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/spi_fsm.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/spi_fsm.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/spi_op_block.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/spi_op_block.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/spiflash.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/spiflash.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/spimemio.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/spimemio.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/transmitter.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -399,8 +263,150 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/uwb_phy_riscv.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/uwb_phy_riscv.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_var.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Hercules/src/uwb_phy_riscv.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/shift_reg_var.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/spi.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spi.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/uwb_phy.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/uwb_phy.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/ice40up5k_spram.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/ice40up5k_spram.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/picorv32.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/picorv32.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/picosoc.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/picosoc.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/picosoc_top.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/picosoc_top.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/reg_addr.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/reg_addr.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/simpleuart.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/simpleuart.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/spi_fsm.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spi_fsm.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/spi_op_block.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spi_op_block.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/spiflash.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spiflash.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/spimemio.v">
+        <FileInfo>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spimemio.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -409,21 +415,48 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="uwb_phy"/>
+        <Option Name="TopModule" Val="uwb_phy_riscv"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/transceptorUWB/Nexys4_Master.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Nexys4_Master.xdc"/>
+          <Attr Name="ImportTime" Val="1752953682"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/imports/tb/uwb_phy_riscv_tb.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../ieee_802_15_6/tb/uwb_phy_riscv_tb.v"/>
+          <Attr Name="ImportTime" Val="1746486697"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_shr.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/shift_reg_shr.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="shift_shr"/>
+        <Option Name="TopModule" Val="uwb_phy_riscv_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -432,6 +465,7 @@
         <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
         <Option Name="PamPseudoTop" Val="pseudo_tb"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="xsim.simulate.runtime" Val="1s"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
