@@ -59,7 +59,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="5"/>
+    <Option Name="WTXSimLaunchSim" Val="6"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -261,8 +261,18 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/uwb_phy.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/uwb_phy.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/src/uwb_phy_riscv.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/uwb_phy_riscv.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -273,7 +283,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_var.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/shift_reg_var.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -284,19 +293,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/spi.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spi.v"/>
-          <Attr Name="ImportTime" Val="1746486696"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/uwb_phy.v">
-        <FileInfo>
-          <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/uwb_phy.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -306,7 +303,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/ice40up5k_spram.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/ice40up5k_spram.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -317,7 +313,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/picorv32.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/picorv32.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -328,7 +323,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/picosoc.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/picosoc.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -339,7 +333,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/picosoc_top.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/picosoc_top.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -350,7 +343,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/reg_addr.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/reg_addr.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -361,7 +353,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/simpleuart.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/simpleuart.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -372,7 +363,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/spi_fsm.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spi_fsm.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -383,7 +373,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/spi_op_block.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spi_op_block.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -394,7 +383,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/spiflash.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spiflash.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -405,7 +393,6 @@
       <File Path="$PSRCDIR/sources_1/imports/src/spimemio.v">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../tcc_Felix_Ameixa/Projeto/Hercules/src/spimemio.v"/>
           <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -413,9 +400,17 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/ip/vio_0/vio_0.xci">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="uwb_phy_riscv"/>
+        <Option Name="TopModule" Val="uwb_phy"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -496,9 +491,7 @@
   <Runs Version="1" Minor="20">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
         <Step Id="synth_design"/>
       </Strategy>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2023"/>
@@ -507,9 +500,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
