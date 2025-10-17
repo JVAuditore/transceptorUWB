@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri Oct 17 16:48:45 2025
+# Process ID: 7932
+# Current directory: D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.runs/synth_1
+# Command line: vivado.exe -log uwb_phy_riscv.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uwb_phy_riscv.tcl
+# Log file: D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.runs/synth_1/uwb_phy_riscv.vds
+# Journal file: D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.runs/synth_1\vivado.jou
+# Running On: DESKTOP-2O6GH5E, OS: Windows, CPU Frequency: 2808 MHz, CPU Physical cores: 4, Host memory: 17039 MB
+#-----------------------------------------------------------
+source uwb_phy_riscv.tcl -notrace

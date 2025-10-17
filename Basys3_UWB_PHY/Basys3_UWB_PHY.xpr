@@ -58,7 +58,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="70"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -89,155 +89,199 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../Hercules/src/bch_decoder.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/bch_decoder.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/bch_decoder.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/bch_encoder.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/bch_encoder.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/bch_encoder.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/chien_search.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/chien_search.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/chien_search.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/deinterleaver.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/deinterleaver.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/deinterleaver.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/hcs.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/hcs.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/hcs.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/interleaver.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/interleaver.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/interleaver.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/kes.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/kes.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/kes.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/mult_bch_63_51.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/mult_bch_63_51.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/mult_bch_63_51.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/mult_mod.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/mult_mod.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/mult_mod.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/receiver.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/receiver.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/receiver.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/receiver_a.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/receiver_a.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/receiver_a.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/receiver_b.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/receiver_b.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/receiver_b.v"/>
+          <Attr Name="ImportTime" Val="1760351633"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/reg_d.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/reg_d.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/reg_d.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/scrambler.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/scrambler.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/scrambler.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/shift_reg.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/shift_reg.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/shift_reg.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/shift_reg_interleaver.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_interleaver.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/shift_reg_interleaver.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/shift_reg_var.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/shift_reg_var.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/shift_reg_var.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/shr_detector.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/shr_detector.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/shr_detector.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/spi.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/spi.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/spi.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/syndrome_calc.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/syndrome_calc.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/syndrome_calc.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/transmitter.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/transmitter.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/transmitter.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Hercules/src/uwb_phy.v">
+      <File Path="$PSRCDIR/sources_1/imports/src/uwb_phy.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/src/uwb_phy.v"/>
+          <Attr Name="ImportTime" Val="1746486696"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -251,14 +295,18 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="C:/Users/joaow/OneDrive - unb.br/Documentos/eletronica/VHDL/Basys3_timing.xdc">
+      <File Path="$PSRCDIR/constrs_1/imports/VHDL/Basys3_timing.xdc">
         <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/joaow/OneDrive - unb.br/Documentos/eletronica/VHDL/Basys3_timing.xdc"/>
+          <Attr Name="ImportTime" Val="1634956314"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
-      <File Path="C:/Users/joaow/OneDrive - unb.br/Documentos/eletronica/VHDL/basys3_Master .xdc">
+      <File Path="$PSRCDIR/constrs_1/imports/VHDL/basys3_Master .xdc">
         <FileInfo>
+          <Attr Name="ImportPath" Val="C:/Users/joaow/OneDrive - unb.br/Documentos/eletronica/VHDL/basys3_Master .xdc"/>
+          <Attr Name="ImportTime" Val="1664243298"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -268,9 +316,19 @@
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/imports/tb/uwb_phy_tb.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../Hercules/tb/uwb_phy_tb.v"/>
+          <Attr Name="ImportTime" Val="1746486697"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="uwb_phy"/>
+        <Option Name="TopModule" Val="uwb_phy_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
@@ -285,6 +343,14 @@
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
       <Filter Type="Utils"/>
+      <File Path="$PSRCDIR/utils_1/imports/synth_1/uwb_phy.dcp">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedInSteps" Val="synth_1"/>
+          <Attr Name="AutoDcp" Val="1"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
@@ -309,11 +375,9 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="20">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/uwb_phy.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -321,11 +385,9 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 4 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -336,6 +398,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2023"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>

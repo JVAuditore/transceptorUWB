@@ -1,0 +1,489 @@
+
+*** Running vivado
+    with args -log uwb_phy_riscv.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uwb_phy_riscv.tcl
+
+
+ECHO est  desativado.
+ECHO est  desativado.
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source uwb_phy_riscv.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 449.074 ; gain = 163.754
+Command: read_checkpoint -auto_incremental -incremental D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/utils_1/imports/synth_1/uwb_phy_riscv.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/utils_1/imports/synth_1/uwb_phy_riscv.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top uwb_phy_riscv -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 21144
+INFO: [Synth 8-11241] undeclared symbol 'scrambler_in', assumed default net type 'wire' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/transmitter.v:888]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1283.090 ; gain = 411.223
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'uwb_phy_riscv' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/uwb_phy_riscv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'receiver' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver.v:1]
+INFO: [Synth 8-6157] synthesizing module 'receiver_a' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_a.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_reg' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'reg_d' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/reg_d.v:1]
+	Parameter N bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_d' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/reg_d.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'shift_reg' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shr_detector' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shr_detector.v:1]
+WARNING: [Synth 8-567] referenced signal 'symbol_finish' should be on the sensitivity list [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shr_detector.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'shr_detector' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shr_detector.v:1]
+INFO: [Synth 8-6157] synthesizing module 'deinterleaver' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/deinterleaver.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_reg_interleaver' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg_interleaver.v:1]
+	Parameter N bound to: 192 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'shift_reg_interleaver' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg_interleaver.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'deinterleaver' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/deinterleaver.v:1]
+INFO: [Synth 8-6157] synthesizing module 'hcs' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/hcs.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'hcs' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/hcs.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'receiver_a' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_a.v:1]
+INFO: [Synth 8-6157] synthesizing module 'receiver_b' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_b.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bch_decoder' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/bch_decoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'syndrome_calc' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/syndrome_calc.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'syndrome_calc' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/syndrome_calc.v:1]
+INFO: [Synth 8-6157] synthesizing module 'kes' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/kes.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mult_bch_63_51' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/mult_bch_63_51.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mult_mod' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/mult_mod.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mult_mod' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/mult_mod.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mult_bch_63_51' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/mult_bch_63_51.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'kes' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/kes.v:1]
+INFO: [Synth 8-6157] synthesizing module 'chien_search' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/chien_search.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'chien_search' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/chien_search.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bch_decoder' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/bch_decoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_reg__parameterized0' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+	Parameter N bound to: 51 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'shift_reg__parameterized0' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_reg__parameterized1' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+	Parameter N bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'shift_reg__parameterized1' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'receiver_b' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_b.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'receiver' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver.v:1]
+INFO: [Synth 8-6157] synthesizing module 'transmitter' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/transmitter.v:1]
+WARNING: [Synth 8-567] referenced signal 'crc_counter' should be on the sensitivity list [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/transmitter.v:214]
+INFO: [Synth 8-6157] synthesizing module 'scrambler' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/scrambler.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'scrambler' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/scrambler.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bch_encoder' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/bch_encoder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bch_encoder' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/bch_encoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'interleaver' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/interleaver.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'interleaver' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/interleaver.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_reg__parameterized2' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+	Parameter N bound to: 40 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'shift_reg__parameterized2' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_reg__parameterized3' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+	Parameter N bound to: 2612 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'shift_reg__parameterized3' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+INFO: [Synth 8-226] default block is never used [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/transmitter.v:1061]
+INFO: [Synth 8-6155] done synthesizing module 'transmitter' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/transmitter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'shift_reg__parameterized4' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+	Parameter N bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'shift_reg__parameterized4' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shift_reg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uwb_phy_riscv' (0#1) [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/uwb_phy_riscv.v:1]
+WARNING: [Synth 8-6014] Unused sequential element bch_ready_reg was removed.  [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_b.v:82]
+WARNING: [Synth 8-3848] Net load_MPDU_reg in module/entity uwb_phy_riscv does not have driver. [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/uwb_phy_riscv.v:38]
+WARNING: [Synth 8-7129] Port PHR_reg_q[22] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[21] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[20] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[18] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[17] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[16] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[15] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[14] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[13] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[12] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[3] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[2] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[1] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[0] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2118] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2117] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2116] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2115] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2114] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2113] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2112] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[63] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[62] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[61] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[60] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[59] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[58] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[57] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[56] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[55] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[54] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[53] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[52] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[51] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[50] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[49] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[48] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[47] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[46] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[45] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[44] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[43] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[42] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[41] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[40] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[39] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[38] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[37] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[36] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[35] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[34] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[33] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[32] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[31] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[30] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[29] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[28] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[27] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[26] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[25] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[24] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[23] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[22] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[21] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[20] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[19] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[18] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[17] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[16] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[15] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[14] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[13] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[12] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[11] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[10] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[9] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[8] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[7] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[6] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[5] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[4] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[3] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[2] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[1] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MPDU_reg_q[0] in module transmitter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[23] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[22] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[21] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[20] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[19] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[18] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[17] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[16] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[15] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[14] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[13] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[12] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[11] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[3] in module receiver_a is either unconnected or has no load
+WARNING: [Synth 8-7129] Port PHR_reg_q[2] in module receiver_a is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1434.328 ; gain = 562.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1434.328 ; gain = 562.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1434.328 ; gain = 562.461
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.515 . Memory (MB): peak = 1434.328 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/constrs_1/imports/transceptorUWB/Nexys4_Master.xdc]
+Finished Parsing XDC File [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/constrs_1/imports/transceptorUWB/Nexys4_Master.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1543.879 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.181 . Memory (MB): peak = 1543.879 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'shr_detector'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'transmitter'
+WARNING: [Synth 8-327] inferring latch for variable 'shr_detected_reg' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/shr_detector.v:79]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               check_seq |                                0 |                              000
+             check_zeros |                                1 |                              001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'shr_detector'
+WARNING: [Synth 8-327] inferring latch for variable 'load_deinterleaver_counter_reg' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_a.v:127]
+WARNING: [Synth 8-327] inferring latch for variable 'clear_deinterleaver_counter_reg' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_a.v:128]
+WARNING: [Synth 8-327] inferring latch for variable 'load_bch_reg' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_b.v:127]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                      00000000001 |                             0000
+            calc_crc_bch |                      00000000010 |                             0001
+               bch_clear |                      00000000100 |                             0010
+            bch_in_state |                      00000001000 |                             0011
+ interleaver_start_state |                      00000010000 |                             0100
+    wait_interleaver_bit |                      00000100000 |                             0101
+    push_interleaver_bit |                      00001000000 |                             0110
+            send_SHR_bit |                      00010000000 |                             0111
+              send_zeros |                      00100000000 |                             1000
+                send_PHR |                      01000000000 |                             1001
+               send_PSDU |                      10000000000 |                             1010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'transmitter'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   12 Bit       Adders := 3     
+	   2 Input    9 Bit       Adders := 2     
+	   3 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 14    
+	   3 Input    8 Bit       Adders := 3     
+	   2 Input    6 Bit       Adders := 8     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 4     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     51 Bit         XORs := 1     
+	   2 Input     12 Bit         XORs := 2     
+	   6 Input      6 Bit         XORs := 191   
+	   2 Input      6 Bit         XORs := 1     
+	   3 Input      6 Bit         XORs := 63    
+	   4 Input      1 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 977   
++---Registers : 
+	             2120 Bit    Registers := 2     
+	              192 Bit    Registers := 3     
+	               51 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               12 Bit    Registers := 3     
+	                8 Bit    Registers := 13    
+	                6 Bit    Registers := 11    
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3142  
++---Muxes : 
+	   2 Input 2120 Bit        Muxes := 3     
+	   2 Input  192 Bit        Muxes := 15    
+	   2 Input   51 Bit        Muxes := 2     
+	   2 Input   24 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 1     
+	   3 Input   14 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 2     
+	  11 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 12    
+	   2 Input    8 Bit        Muxes := 8     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 8     
+	   2 Input    4 Bit        Muxes := 1     
+	  11 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 1     
+	  11 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 6397  
+	  11 Input    1 Bit        Muxes := 12    
+	   4 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 11    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (receiver_a1/shr_detector1/shr_detected_reg) is unused and will be removed from module receiver.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:00 ; elapsed = 00:02:02 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:10 ; elapsed = 00:02:12 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:10 ; elapsed = 00:02:12 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:15 ; elapsed = 00:02:17 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:24 ; elapsed = 00:02:26 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:25 ; elapsed = 00:02:26 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin receiver1/deinterleaver_done with 1st driver pin 'receiver1/receiver_a1/deinterleaver1/done_reg/Q' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/deinterleaver.v:55]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin receiver1/deinterleaver_done with 2nd driver pin 'receiver1/receiver_b1/load_fifo_in_reg/Q' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_b.v:96]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin receiver1/receiver_b1/counter_bch_out0 with 1st driver pin 'counter_bch_out[5]_i_3/O' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_b.v:62]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin receiver1/receiver_b1/counter_bch_out0 with 2nd driver pin 'counter_bch_out[5]_i_4/O' [D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/receiver_b.v:69]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        2|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:27 ; elapsed = 00:02:29 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:28 ; elapsed = 00:02:29 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:29 ; elapsed = 00:02:30 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:29 ; elapsed = 00:02:30 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    56|
+|3     |LUT1   |    32|
+|4     |LUT2   |   177|
+|5     |LUT3   |  2626|
+|6     |LUT4   |  3126|
+|7     |LUT5   |   493|
+|8     |LUT6   |  2006|
+|9     |MUXF7  |   405|
+|10    |MUXF8  |   184|
+|11    |FDRE   |  8348|
+|12    |FDSE   |    26|
+|13    |LD     |     2|
+|14    |LDC    |     1|
+|15    |IBUF   |  2148|
+|16    |OBUF   |  2145|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:29 ; elapsed = 00:02:30 . Memory (MB): peak = 1543.879 ; gain = 672.012
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 4 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:05 ; elapsed = 00:02:23 . Memory (MB): peak = 1543.879 ; gain = 562.461
+Synthesis Optimization Complete : Time (s): cpu = 00:02:29 ; elapsed = 00:02:31 . Memory (MB): peak = 1543.879 ; gain = 672.012
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.418 . Memory (MB): peak = 1543.879 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 648 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1544.035 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  LD => LDCE: 2 instances
+  LDC => LDCE: 1 instance 
+
+Synth Design complete | Checksum: d6bf6fca
+INFO: [Common 17-83] Releasing license: Synthesis
+77 Infos, 110 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:43 ; elapsed = 00:02:46 . Memory (MB): peak = 1544.035 ; gain = 1071.086
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.runs/synth_1/uwb_phy_riscv.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file uwb_phy_riscv_utilization_synth.rpt -pb uwb_phy_riscv_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 17 16:51:48 2025...

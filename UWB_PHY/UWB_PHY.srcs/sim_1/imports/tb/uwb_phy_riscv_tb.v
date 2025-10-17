@@ -222,16 +222,16 @@ module uwb_phy_riscv_tb;
       #10;
     end
 
-    // $display("Received interleaved: %h", uuv.receiver1.receiver_a1.deinterleaver1.A_reg[191:191-125]);
-    // $display("Expected interleaved: %h", psdu_transmitter_expected[125:0]);
+     $display("Received interleaved: %h", uuv.receiver1.receiver_a1.deinterleaver1.A_reg[191:191-125]);
+     $display("Expected interleaved: %h", psdu_transmitter_expected[125:0]);
 
-    // $display("Received deinterleaved: %h", uuv.receiver1.receiver_a1.deinterleaver1.O[125:0]);
-    // $display("Expected deinterleaved: %h\n", bch_expected[125:0]);
+     $display("Received deinterleaved: %h", uuv.receiver1.receiver_a1.deinterleaver1.O[125:0]);
+     $display("Expected deinterleaved: %h\n", bch_expected[125:0]);
 
-    // $display("Expected deinterleaved: %h", bch_expected[125:63]);
-    // $display("Expected deinterleaved: %h\n", bch_expected[62:0]);
-    // $display("Expected deinterleaved parity: %h", bch_expected[125:114]);
-    // $display("Expected deinterleaved parity: %h", bch_expected[62:51]);
+     $display("Expected deinterleaved: %h", bch_expected[125:63]);
+     $display("Expected deinterleaved: %h\n", bch_expected[62:0]);
+     $display("Expected deinterleaved parity: %h", bch_expected[125:114]);
+     $display("Expected deinterleaved parity: %h", bch_expected[62:51]);
 
     while(!uuv.receiver1.receiver_b1.ready) begin
       #10;
@@ -253,6 +253,7 @@ module uwb_phy_riscv_tb;
 
     $display("Expected PSDU block 2: %h", bch_expected[50:0]);
     $display("Expected PSDU block 2: %h\n", MPDU_receiver_reg[2068:2018]);
+    $display("Expected PSDU block 2: %b\n", MPDU_receiver_reg);
     
 
     $finish;

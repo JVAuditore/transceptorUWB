@@ -1,0 +1,187 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Wed Oct 15 22:11:02 2025
+# Process ID: 40356
+# Current directory: D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27604 D:\UNB_HD\TCC\transceptorUWB\Basys3_UWB_PHY\Basys3_UWB_PHY.xpr
+# Log file: D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/vivado.log
+# Journal file: D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY\vivado.jou
+# Running On: DESKTOP-2O6GH5E, OS: Windows, CPU Frequency: 2808 MHz, CPU Physical cores: 4, Host memory: 17039 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse D:/UNB_HD/TCC/transceptorUWB/Hercules/tb/uwb_phy_tb.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source uwb_phy_tb.tcl
+run 10 us
+run 10 us
+run 10 us
+run 100 us
+run 100 us
+relaunch_sim
+run 1 ms
+run 250 us
+run 250 us
+relaunch_sim
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 2 ms
+run 2 ms
+run 10 ms
+run 10 ms
+relaunch_sim
+run 10 ms
+add_bp {D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sim_1/imports/tb/uwb_phy_tb.v} 61
+remove_bps -file {D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sim_1/imports/tb/uwb_phy_tb.v} -line 61
+run 10 ms
+relaunch_sim
+run 1 ms
+synth_design -top uwb_phy -part xc7a35tcpg236-1 -lint 
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+show_objects -name counter_bch_out0 [get_cells -hierarchical -filter { PRIMITIVE_TYPE =~ OTHERS.*.* } ]
+reset_run synth_1
+show_objects -name load_bch_crc_out [get_nets -hierarchical -top_net_of_hierarchical_group "*" ]
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+show_objects -name load_bch_crc_out [get_pins -hierarchical "*" ]
+show_objects -name find_1 [get_pins -hierarchical -filter { NAME =~  "load_bch_crc_out" && DIRECTION == "IN" } ]
+show_objects -name find_1 [get_nets -hierarchical -top_net_of_hierarchical_group "load_bch_crc_out" ]
+set_property mark_debug true [get_nets [list receiver1/receiver_b1/load_bch_crc_out]]
+show_objects -name load [get_nets -hierarchical -top_net_of_hierarchical_group "load_bch_crc_out_i_1/O" ]
+show_objects -name load_bch_crc_out_i_1/O [get_nets -hierarchical -top_net_of_hierarchical_group "load_bch_crc_out_i_1/O" ]
+show_objects -name load_bch_crc_out_i_1 [get_nets -hierarchical -top_net_of_hierarchical_group "load_bch_crc_out_i_1" ]
+show_objects -name load_bch_crc_out_i_1 [get_pins -hierarchical -filter { NAME =~  "load_bch_crc_out" && DIRECTION == "IN" } ]
+show_objects -name load_bch_crc_out_i_1 [get_pins -hierarchical "load_bch_crc_out" ]
+show_objects -name load_bch_crc_out_i_1 [get_pins -hierarchical "load_bch_crc_out_i_1" ]
+show_objects -name load_bch_crc_out_i_1 [get_pins -hierarchical "*load_bch_crc_out_i_1*" ]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_sim
+launch_simulation
+source uwb_phy_tb.tcl
+run 50 us
+relaunch_sim
+run 50 us
+run 500 us
+relaunch_sim
+run 500 us
+add_bp {D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sim_1/imports/tb/uwb_phy_tb.v} 243
+relaunch_sim
+run 500 us
+relaunch_sim
+run 500 us
+relaunch_sim
+run 500 us
+remove_bps -file {D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sim_1/imports/tb/uwb_phy_tb.v} -line 243
+relaunch_sim
+run 500 us
+relaunch_sim
+run 500 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/busy}} 
+relaunch_sim
+run 500 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/shift_crc_out}} 
+relaunch_sim
+run 500 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/clear_counter_bch_out}} 
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/counter_bch_out_finish}} 
+relaunch_sim
+run 500 us
+run 500 us
+relaunch_sim
+run 500 us
+relaunch_sim
+run 500 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/first_batch}} 
+relaunch_sim
+run 500 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/flag_load_fifo_in}} 
+relaunch_sim
+run 500 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/counter_interleaver_finish}} 
+relaunch_sim
+relaunch_sim
+run 100 us
+relaunch_sim
+run 200 us
+relaunch_sim
+run 100 us
+relaunch_sim
+run 100 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/receiver1/receiver_b1/clear_fifo_in}} 
+relaunch_sim
+run 120 us
+relaunch_sim
+run 120 us
+relaunch_sim
+run 120 us
+current_wave_config {Untitled 2}
+add_wave {{/uwb_phy_tb/uuv/psdu_fifo}} 
+relaunch_sim
+run 120 us
+relaunch_sim
+run 120 us
+run 120 us
+relaunch_sim
+run 120 us
+relaunch_sim
+run 120 us
+relaunch_sim
+run 120 us
+relaunch_sim
+run 120 us
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+relaunch_sim
+run 120 us
+open_run synth_1 -name synth_1
+show_objects -name counter_bch_out[5]_i [get_nets -hierarchical -top_net_of_hierarchical_group "counter_bch_out" ]
+show_objects -name counter_bch_out[5]_i [get_nets -hierarchical -top_net_of_hierarchical_group "*counter_bch_out*" ]
+show_objects -name find_1 [get_pins -hierarchical "*counter_bch_out[5]_i_3/O*" ]
+show_objects -name find_2 [get_pins -hierarchical "*counter_bch_out[5]_i_4/O*" ]
+reset_run synth_1
+relaunch_sim
+run 120 us
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_design
+refresh_design
+close_design
+close_sim

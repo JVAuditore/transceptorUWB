@@ -1,7 +1,7 @@
-Running: xsim.dir/uwb_phy_riscv_tb_behav/xsimk.exe -simmode gui -wdb uwb_phy_riscv_tb_behav.wdb -simrunnum 0 -socket 62542
+Running: xsim.dir/uwb_phy_riscv_tb_behav/xsimk.exe -simmode gui -wdb uwb_phy_riscv_tb_behav.wdb -simrunnum 0 -socket 54454
 Design successfully loaded
-Design Loading Memory Usage: 15000 KB (Peak: 15000 KB)
-Design Loading CPU Usage: 77 ms
+Design Loading Memory Usage: 14916 KB (Peak: 14916 KB)
+Design Loading CPU Usage: 30 ms
 Simulation completed
-Simulation Memory Usage: 26412 KB (Peak: 26412 KB)
-Simulation CPU Usage: 5406 ms
+Simulation Memory Usage: 26304 KB (Peak: 26304 KB)
+Simulation CPU Usage: 5577 ms

@@ -40,5 +40,3 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/UNB_HD/TCC/transceptorUWB/UWB_PH
 INFO: [VRFC 10-311] analyzing module uwb_phy_riscv
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sim_1/imports/tb/uwb_phy_riscv_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module uwb_phy_riscv_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

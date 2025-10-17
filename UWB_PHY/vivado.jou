@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Sep 24 20:40:58 2025
-# Process ID: 15944
+# Start of session at: Fri Oct 17 15:10:40 2025
+# Process ID: 7068
 # Current directory: D:/UNB_HD/TCC/transceptorUWB/UWB_PHY
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18928 D:\UNB_HD\TCC\transceptorUWB\UWB_PHY\UWB_PHY.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5348 D:\UNB_HD\TCC\transceptorUWB\UWB_PHY\UWB_PHY.xpr
 # Log file: D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/vivado.log
 # Journal file: D:/UNB_HD/TCC/transceptorUWB/UWB_PHY\vivado.jou
 # Running On: DESKTOP-2O6GH5E, OS: Windows, CPU Frequency: 2808 MHz, CPU Physical cores: 4, Host memory: 17039 MB
@@ -14,41 +14,33 @@
 start_gui
 open_project D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.xpr
 update_compile_order -fileset sources_1
-xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]
-create_project Basys3_UWB_PHY D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY -part xc7a35tcpg236-1
-current_project UWB_PHY
-current_project Basys3_UWB_PHY
-add_files -norecurse D:/UNB_HD/TCC/transceptorUWB/Hercules/src/uwb_phy.v
-update_compile_order -fileset sources_1
-current_project UWB_PHY
-current_project Basys3_UWB_PHY
-add_files -norecurse {D:/UNB_HD/TCC/transceptorUWB/Hercules/src/receiver.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/transmitter.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/spi.v}
-update_compile_order -fileset sources_1
-current_project UWB_PHY
-set_property is_enabled true [get_files  D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/uwb_phy.v]
-update_compile_order -fileset sources_1
 # Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
 set_property source_mgmt_mode None [current_project]
-set_property top uwb_phy [current_fileset]
+set_property top uwb_phy_riscv [current_fileset]
 # Re-enabling previously disabled source management mode.
 set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sources_1
-current_project Basys3_UWB_PHY
-add_files -norecurse D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shift_reg.v
-update_compile_order -fileset sources_1
-add_files -norecurse D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shift_reg_var.v
-update_compile_order -fileset sources_1
-add_files -norecurse {D:/UNB_HD/TCC/transceptorUWB/Hercules/src/interleaver.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/hcs.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/scrambler.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/bch_encoder.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/receiver_b.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/receiver_a.v}
-update_compile_order -fileset sources_1
-add_files -norecurse {D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shr_detector.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/deinterleaver.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/bch_decoder.v}
-update_compile_order -fileset sources_1
-add_files -norecurse {D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shift_reg_interleaver.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/reg_d.v}
-update_compile_order -fileset sources_1
-add_files -norecurse {D:/UNB_HD/TCC/transceptorUWB/Hercules/src/chien_search.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/kes.v D:/UNB_HD/TCC/transceptorUWB/Hercules/src/syndrome_calc.v}
-update_compile_order -fileset sources_1
-add_files -norecurse D:/UNB_HD/TCC/transceptorUWB/Hercules/src/mult_bch_63_51.v
-update_compile_order -fileset sources_1
-add_files -norecurse D:/UNB_HD/TCC/transceptorUWB/Hercules/src/mult_mod.v
-update_compile_order -fileset sources_1
+launch_simulation
+source uwb_phy_riscv_tb.tcl
+relaunch_sim
+current_wave_config {Untitled 1}
+add_wave {{/uwb_phy_riscv_tb/uuv/receiver1/receiver_b1/busy}} 
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 10 us
+run 10 us
 launch_runs synth_1 -jobs 4
 wait_on_run synth_1
+set_property is_enabled false [get_files  D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/ip/vio_0/vio_0.xci]
+set_property is_enabled false [get_files  D:/UNB_HD/TCC/transceptorUWB/UWB_PHY/UWB_PHY.srcs/sources_1/imports/src/uwb_phy.v]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+relaunch_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+relaunch_sim
+relaunch_sim
+close_sim

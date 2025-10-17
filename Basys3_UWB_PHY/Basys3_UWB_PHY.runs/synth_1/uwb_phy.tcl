@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -85,28 +86,28 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/bch_decoder.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/bch_encoder.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/chien_search.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/deinterleaver.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/hcs.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/interleaver.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/kes.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/mult_bch_63_51.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/mult_mod.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/receiver.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/receiver_a.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/receiver_b.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/reg_d.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/scrambler.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shift_reg.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shift_reg_interleaver.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shift_reg_var.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/shr_detector.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/spi.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/syndrome_calc.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/transmitter.v
-  D:/UNB_HD/TCC/transceptorUWB/Hercules/src/uwb_phy.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/bch_decoder.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/bch_encoder.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/chien_search.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/deinterleaver.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/hcs.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/interleaver.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/kes.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/mult_bch_63_51.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/mult_mod.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/receiver.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/receiver_a.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/receiver_b.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/reg_d.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/scrambler.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/shift_reg.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/shift_reg_interleaver.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/shift_reg_var.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/shr_detector.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/spi.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/syndrome_calc.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/transmitter.v
+  D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/sources_1/imports/src/uwb_phy.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -117,7 +118,15 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/constrs_1/imports/VHDL/Basys3_timing.xdc
+set_property used_in_implementation false [get_files D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/constrs_1/imports/VHDL/Basys3_timing.xdc]
+
+read_xdc {{D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/constrs_1/imports/VHDL/basys3_Master .xdc}}
+set_property used_in_implementation false [get_files {{D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/constrs_1/imports/VHDL/basys3_Master .xdc}}]
+
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental D:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.srcs/utils_1/imports/synth_1/uwb_phy.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
