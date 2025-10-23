@@ -4,9 +4,9 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 ## Clock signal
-set_property PACKAGE_PIN W5 [get_ports sck]							
-	set_property IOSTANDARD LVCMOS33 [get_ports sck]
-	create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports sck]
+#set_property PACKAGE_PIN W5 [get_ports sck]							
+#	set_property IOSTANDARD LVCMOS33 [get_ports sck]
+#	create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports sck]
  
 ## Switches
 set_property PACKAGE_PIN V17 [get_ports {rst_n}]					
@@ -123,8 +123,9 @@ set_property PACKAGE_PIN V17 [get_ports {rst_n}]
 
 ##Pmod Header JA
 ##Sch name = JA1
-#set_property PACKAGE_PIN J1 [get_ports {sck}]					
-#	set_property IOSTANDARD LVCMOS33 [get_ports {sck}]
+set_property PACKAGE_PIN J1 [get_ports {sck}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {sck}]
+	set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets sck_IBUF]
 #Sch name = JA2
 set_property PACKAGE_PIN L2 [get_ports {cs_n}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {cs_n}]
