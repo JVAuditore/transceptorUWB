@@ -10,7 +10,9 @@
 /**********************************************************************//**
  * @file teste_vivado_ip/main.c
  * @author Matheus Félix
- * @brief Programa para testar filtro de média móvel com axi4_lite.
+ * @brief Programa para testar o bloco do filtro de média móvel como um
+ * periférico axi4_lite, realizando o envio de dados de entrada através
+ * da UART.
  **************************************************************************/
 
 // ====================================
@@ -39,14 +41,6 @@
 #define AXI_MOV_AVG_REG_IN 		(AXI_MOV_AVG_ADDRESS + 0x00000000)	// Registrador de entrada (slv_reg0)
 #define AXI_MOV_AVG_REG_OUT     (AXI_MOV_AVG_ADDRESS + 0x00000004) 	// Registrador de saída (slv_reg1)
 
-//============================================================
-// Função para delay do processador
-//============================================================
-
-void delay_ms(uint32_t time_ms) {
-  neorv32_aux_delay_ms(neorv32_sysinfo_get_clk(), time_ms);
-}
-
 // =================================================================================
 // Macros para acesso a endereço/registrador para operações de leitura e escrita
 // =================================================================================
@@ -70,32 +64,30 @@ uint32_t uart_read_u32(void) {
 // ============================================================================
 int main() {
 
-    neorv32_uart0_setup(BAUD_RATE, 0);
+    neorv32_uart0_setup(BAUD_RATE, 0);  //Inicializa a comunicação UART
     neorv32_uart0_printf("Sistema de Processamento de Media Movel Ativo\n");
 
     while (1) { 
         
         uint32_t input_value;
-        //uint32_t status_val = 0;
-        uint32_t mov_avg_result; // Variável para o valor bruto de 32 bits
+        uint32_t mov_avg_result;
         
         // Captura o valor de 32 bits
         input_value = uart_read_u32();
 
         neorv32_uart0_printf("\n -> Valor lido: %u. Processando...\n", input_value);
         
-        // colocando o dado nos bits 15:0, onde o VHDL o espera.
+        // Armazenando o dado no inteiro de 32 bits, onde o VHDL o espera.
         AXI_REG_WRITE(AXI_MOV_AVG_REG_IN, input_value);
 
-        //Aguarda o bit DONE (Bit 1 do Reg de Status)
         neorv32_uart0_printf(" -> Aguardando IP...");
 
         // Lê o resultado BRUTO de 32 bits (bits 15:0 possuem o resultado)
         mov_avg_result = (AXI_REG_READ(AXI_MOV_AVG_REG_OUT) & 0xFFFF);
 
-        AXI_REG_WRITE(AXI_GPIO_OUT_ADDRESS, mov_avg_result);
+        AXI_REG_WRITE(AXI_GPIO_OUT_ADDRESS, mov_avg_result);    // Mostra o resultado nos leds
 
-        // Imprime o resultado final
+        // Imprime o resultado final na tela
         neorv32_uart0_printf("\n -> Calculo concluido! Lendo resultado...\n");
         neorv32_uart0_printf(" -> Media Movel (MA) Result: %u\n", mov_avg_result);
     }
