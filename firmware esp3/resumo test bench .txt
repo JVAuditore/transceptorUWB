@@ -1,0 +1,19 @@
+No receiver inicia no input Injetando o valor de c1 que tem 62 bits
+a cada clk e apos 15clk input recebe 0 e continua até o fim dos 62 bits. 
+	Se repete o envio de c1 4x
+	Depois envia c1 negado seguindo o mesmo padrao a cada clk e 0 apos 15 clk
+	Depois se envia o phr_transmitter_expected que tem 40 bits
+	Depois de envia o psdu_transmitter_expected de 126 bits
+
+Aguarda a flag !uuv.receiver1.receiver_a1.deinterleaver1.done
+
+
+Pega os 7 bits do PHR interno e envia por mosi
+Salva em phr_receiver_fifo o miso e printa o miso
+
+Pega os 7 bits do PSU interno e envia por mosi
+salva em psdu_transmitter_fifo o miso e printa o miso
+
+Compara os ultimos 50 bits dos psdu_transmitter_fifo com os 50 bits do bch_expected
+
+Compara os penultimos 50 bits dos psdu_transmitter_fifo com os primeiros 50 bits do bch_expected

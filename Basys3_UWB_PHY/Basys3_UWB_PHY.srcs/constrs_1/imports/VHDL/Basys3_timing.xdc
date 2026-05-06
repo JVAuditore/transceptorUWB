@@ -1,6 +1,6 @@
 # Artix7 xdc
 # define clock and period: testando o circuito a fclk=100 MHz Tclk=10ns
-# create_clock -period 10.000 -name clk -waveform {0.000 5.000} [get_ports clk]
+# create_clock -period 1000.000 -name clk -waveform {0.000 5.000} [get_ports clk]
 
 # Create a virual clock for IO constraints
 # create_clock -period 10.000 -name virtual_clock

@@ -288,13 +288,13 @@ module uwb_phy_tb;
       #10;
     end
 
-    $display("Received PSDU: %b", psdu_transmitter_fifo);
+    $display("Received PSDU: %h", psdu_transmitter_fifo);
     
-    $display("Expected PSDU block 1: %b", bch_expected[113:63]);
-    $display("Received PSDU block 1: %b\n", psdu_transmitter_fifo[2119:2069]);
+    $display("Expected PSDU block 1: %h", bch_expected[113:63]);
+    $display("Received PSDU block 1: %h\n", psdu_transmitter_fifo[2119:2069]);
 
-    $display("Expected PSDU block 2: %b", bch_expected[50:0]);
-    $display("Expected PSDU block 2: %b\n", psdu_transmitter_fifo[2068:2018]);
+    $display("Expected PSDU block 2: %h", bch_expected[50:0]);
+    $display("Expected PSDU block 2: %h\n", psdu_transmitter_fifo[2068:2018]);
 
 
     #20;
