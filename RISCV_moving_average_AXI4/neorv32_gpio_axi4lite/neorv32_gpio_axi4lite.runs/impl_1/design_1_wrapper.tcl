@@ -66,8 +66,9 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+  set_param xicom.use_bs_reader 1
+  create_project -in_memory -part xc7a100tcsg324-1
+  set_property board_part digilentinc.com:nexys4:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Users/Matheus/Documents/Faculdade/14_Semestre/neorv32_gpio_axi4lite/neorv32_gpio_axi4lite.cache/wt [current_project]
@@ -85,9 +86,9 @@ set rc [catch {
   set_param project.isImplRun true
   add_files C:/Users/Matheus/Documents/Faculdade/14_Semestre/neorv32_gpio_axi4lite/neorv32_gpio_axi4lite.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
-  read_xdc C:/Users/Matheus/Documents/Faculdade/14_Semestre/neorv32_gpio_axi4lite/neorv32_gpio_axi4lite.srcs/constrs_1/imports/Downloads/Basys3.xdc
+  read_xdc C:/Users/Matheus/Documents/Faculdade/14_Semestre/neorv32_gpio_axi4lite/neorv32_gpio_axi4lite.srcs/constrs_1/imports/imports/Nexys-4-Master.xdc
   set_param project.isImplRun true
-  link_design -top design_1_wrapper -part xc7a35tcpg236-1
+  link_design -top design_1_wrapper -part xc7a100tcsg324-1
   set_param project.isImplRun false
   write_hwdef -force -file design_1_wrapper.hwdef
   close_msg_db -file init_design.pb

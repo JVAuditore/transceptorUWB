@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sat May 23 16:50:46 2026
+// Date        : Fri Jun  5 05:14:50 2026
 // Host        : LAPTOP-E0ACQLBJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_neorv32_vivado_ip_0_0 -prefix
-//               design_1_neorv32_vivado_ip_0_0_ design_1_neorv32_vivado_ip_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               C:/Users/Matheus/Documents/Faculdade/14_Semestre/neorv32_interrupt/neorv32_interrupt.srcs/sources_1/bd/design_1/ip/design_1_neorv32_vivado_ip_0_0/design_1_neorv32_vivado_ip_0_0_stub.v
 // Design      : design_1_neorv32_vivado_ip_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1

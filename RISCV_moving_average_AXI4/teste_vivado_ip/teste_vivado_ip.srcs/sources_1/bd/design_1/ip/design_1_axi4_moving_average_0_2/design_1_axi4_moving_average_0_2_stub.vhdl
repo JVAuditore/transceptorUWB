@@ -1,13 +1,13 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Thu Apr 30 06:54:05 2026
+-- Date        : Fri Jun  5 12:19:37 2026
 -- Host        : LAPTOP-E0ACQLBJ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               C:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ip/design_1_axi4_moving_average_0_2/design_1_axi4_moving_average_0_2_stub.vhdl
 -- Design      : design_1_axi4_moving_average_0_2
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7a35tcpg236-1
+-- Device      : xc7a100tcsg324-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

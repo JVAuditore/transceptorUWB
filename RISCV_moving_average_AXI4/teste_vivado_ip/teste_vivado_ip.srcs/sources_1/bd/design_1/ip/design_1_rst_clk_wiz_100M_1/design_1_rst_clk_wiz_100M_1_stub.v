@@ -1,13 +1,13 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sat Apr 25 14:59:56 2026
+// Date        : Fri Jun  5 11:42:22 2026
 // Host        : LAPTOP-E0ACQLBJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_100M_1/design_1_rst_clk_wiz_100M_1_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_rst_clk_wiz_100M_1 -prefix
+//               design_1_rst_clk_wiz_100M_1_ design_1_rst_clk_wiz_100M_1_stub.v
 // Design      : design_1_rst_clk_wiz_100M_1
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7a35tcpg236-1
+// Device      : xc7a100tcsg324-1
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

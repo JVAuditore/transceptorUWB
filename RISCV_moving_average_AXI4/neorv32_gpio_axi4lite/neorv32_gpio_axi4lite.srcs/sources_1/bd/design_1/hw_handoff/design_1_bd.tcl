@@ -43,8 +43,8 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
-   create_project project_1 myproj -part xc7a35tcpg236-1
-   set_property BOARD_PART digilentinc.com:basys3:part0:1.1 [current_project]
+   create_project project_1 myproj -part xc7a100tcsg324-1
+   set_property BOARD_PART digilentinc.com:nexys4:part0:1.1 [current_project]
 }
 
 
@@ -206,14 +206,14 @@ proc create_root_design { parentCell } {
    CONFIG.BOOT_ADDR_CUSTOM {0x00000000} \
    CONFIG.BOOT_MODE_SELECT {0} \
    CONFIG.CACHE_BURSTS_EN {false} \
-   CONFIG.CPU_FAST_MUL_EN {true} \
-   CONFIG.CPU_FAST_SHIFT_EN {true} \
+   CONFIG.CPU_FAST_MUL_EN {false} \
+   CONFIG.CPU_FAST_SHIFT_EN {false} \
    CONFIG.DMEM_EN {true} \
    CONFIG.IMEM_EN {true} \
    CONFIG.IO_GPIO_EN {false} \
    CONFIG.IO_GPIO_OUT_NUM {1} \
    CONFIG.IO_UART0_EN {true} \
-   CONFIG.RISCV_ISA_C {true} \
+   CONFIG.RISCV_ISA_C {false} \
    CONFIG.RISCV_ISA_M {true} \
    CONFIG.XBUS_EN {true} \
    CONFIG.XBUS_REGSTAGE_EN {false} \

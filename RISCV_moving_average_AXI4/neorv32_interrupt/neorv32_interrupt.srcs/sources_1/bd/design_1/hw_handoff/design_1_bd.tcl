@@ -177,6 +177,8 @@ proc create_root_design { parentCell } {
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
+   CONFIG.C_ALL_OUTPUTS {1} \
+   CONFIG.C_GPIO_WIDTH {16} \
    CONFIG.GPIO_BOARD_INTERFACE {led_16bits} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_gpio_0
@@ -200,14 +202,14 @@ proc create_root_design { parentCell } {
    CONFIG.BOOT_ADDR_CUSTOM {0x00000000} \
    CONFIG.BOOT_MODE_SELECT {0} \
    CONFIG.CACHE_BURSTS_EN {false} \
-   CONFIG.CPU_FAST_MUL_EN {true} \
-   CONFIG.CPU_FAST_SHIFT_EN {true} \
+   CONFIG.CPU_FAST_MUL_EN {false} \
+   CONFIG.CPU_FAST_SHIFT_EN {false} \
    CONFIG.DMEM_EN {true} \
    CONFIG.IMEM_EN {true} \
    CONFIG.IO_GPIO_EN {false} \
    CONFIG.IO_GPIO_OUT_NUM {1} \
    CONFIG.IO_UART0_EN {true} \
-   CONFIG.RISCV_ISA_C {true} \
+   CONFIG.RISCV_ISA_C {false} \
    CONFIG.RISCV_ISA_M {true} \
    CONFIG.XBUS_EN {true} \
    CONFIG.XBUS_REGSTAGE_EN {false} \

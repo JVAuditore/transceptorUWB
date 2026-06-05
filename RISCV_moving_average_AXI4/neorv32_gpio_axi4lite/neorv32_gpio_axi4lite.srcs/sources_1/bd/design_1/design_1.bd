@@ -2,14 +2,14 @@
   "design": {
     "design_info": {
       "boundary_crc": "0x5408C304AF5C897D",
-      "device": "xc7a35tcpg236-1",
+      "device": "xc7a100tcsg324-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2019.2",
       "validated": "true"
     },
     "design_tree": {
-      "rst_clk_wiz_100M": "",
+      "axi4_moving_average_0": "",
       "axi_gpio_0": "",
       "axi_interconnect_0": {
         "xbar": "",
@@ -19,10 +19,10 @@
         "m00_couplers": {},
         "m01_couplers": {}
       },
-      "reset_inv_0": "",
-      "neorv32_vivado_ip_0": "",
       "clk_wiz_0": "",
-      "axi4_moving_average_0": ""
+      "neorv32_vivado_ip_0": "",
+      "rst_clk_wiz_100M": "",
+      "reset_inv_0": ""
     },
     "interface_ports": {
       "led": {
@@ -76,17 +76,9 @@
       }
     },
     "components": {
-      "rst_clk_wiz_100M": {
-        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "xci_name": "design_1_rst_clk_wiz_100M_1",
-        "parameters": {
-          "RESET_BOARD_INTERFACE": {
-            "value": "Custom"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
-          }
-        }
+      "axi4_moving_average_0": {
+        "vlnv": "xilinx.com:user:axi4_moving_average_ip:1.0",
+        "xci_name": "design_1_axi4_moving_average_0_2"
       },
       "axi_gpio_0": {
         "vlnv": "xilinx.com:ip:axi_gpio:2.0",
@@ -402,10 +394,10 @@
           }
         },
         "interface_nets": {
-          "s00_couplers_to_xbar": {
+          "axi_interconnect_0_to_s00_couplers": {
             "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
+              "S00_AXI",
+              "s00_couplers/S_AXI"
             ]
           },
           "m00_couplers_to_axi_interconnect_0": {
@@ -414,10 +406,10 @@
               "m00_couplers/M_AXI"
             ]
           },
-          "xbar_to_m00_couplers": {
+          "s00_couplers_to_xbar": {
             "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
             ]
           },
           "m01_couplers_to_axi_interconnect_0": {
@@ -426,16 +418,16 @@
               "m01_couplers/M_AXI"
             ]
           },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
           "xbar_to_m01_couplers": {
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
-            ]
-          },
-          "axi_interconnect_0_to_s00_couplers": {
-            "interface_ports": [
-              "S00_AXI",
-              "s00_couplers/S_AXI"
             ]
           }
         },
@@ -496,15 +488,15 @@
           }
         }
       },
-      "reset_inv_0": {
-        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
-        "xci_name": "design_1_util_vector_logic_0_0",
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_1_clk_wiz_0_0",
         "parameters": {
-          "C_OPERATION": {
-            "value": "not"
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
           },
-          "C_SIZE": {
-            "value": "1"
+          "RESET_BOARD_INTERFACE": {
+            "value": "reset"
           }
         }
       },
@@ -519,10 +511,10 @@
             "value": "false"
           },
           "CPU_FAST_MUL_EN": {
-            "value": "true"
+            "value": "false"
           },
           "CPU_FAST_SHIFT_EN": {
-            "value": "true"
+            "value": "false"
           },
           "DMEM_EN": {
             "value": "true"
@@ -537,7 +529,7 @@
             "value": "true"
           },
           "RISCV_ISA_C": {
-            "value": "true"
+            "value": "false"
           },
           "RISCV_ISA_M": {
             "value": "true"
@@ -550,24 +542,38 @@
           }
         }
       },
-      "clk_wiz_0": {
-        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "xci_name": "design_1_clk_wiz_0_0",
+      "rst_clk_wiz_100M": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "design_1_rst_clk_wiz_100M_1",
         "parameters": {
-          "CLK_IN1_BOARD_INTERFACE": {
-            "value": "sys_clock"
-          },
           "RESET_BOARD_INTERFACE": {
-            "value": "reset"
+            "value": "Custom"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
           }
         }
       },
-      "axi4_moving_average_0": {
-        "vlnv": "xilinx.com:user:axi4_moving_average_ip:1.0",
-        "xci_name": "design_1_axi4_moving_average_0_2"
+      "reset_inv_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "design_1_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
       }
     },
     "interface_nets": {
+      "axi_gpio_0_GPIO": {
+        "interface_ports": [
+          "led",
+          "axi_gpio_0/GPIO"
+        ]
+      },
       "neorv32_vivado_ip_0_m_axi": {
         "interface_ports": [
           "neorv32_vivado_ip_0/m_axi",
@@ -584,12 +590,6 @@
         "interface_ports": [
           "axi_interconnect_0/M01_AXI",
           "axi_gpio_0/S_AXI"
-        ]
-      },
-      "axi_gpio_0_GPIO": {
-        "interface_ports": [
-          "led",
-          "axi_gpio_0/GPIO"
         ]
       },
       "axi_gpio_0_GPIO2": {
@@ -634,14 +634,14 @@
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
-          "rst_clk_wiz_100M/slowest_sync_clk",
+          "axi4_moving_average_0/s00_axi_aclk",
           "axi_gpio_0/s_axi_aclk",
-          "neorv32_vivado_ip_0/clk",
           "axi_interconnect_0/ACLK",
+          "axi_interconnect_0/S00_ACLK",
           "axi_interconnect_0/M00_ACLK",
           "axi_interconnect_0/M01_ACLK",
-          "axi_interconnect_0/S00_ACLK",
-          "axi4_moving_average_0/s00_axi_aclk"
+          "neorv32_vivado_ip_0/clk",
+          "rst_clk_wiz_100M/slowest_sync_clk"
         ]
       },
       "clk_wiz_0_locked": {
@@ -659,12 +659,12 @@
       "rst_clk_wiz_100M_peripheral_aresetn": {
         "ports": [
           "rst_clk_wiz_100M/peripheral_aresetn",
+          "axi4_moving_average_0/s00_axi_aresetn",
           "axi_gpio_0/s_axi_aresetn",
-          "neorv32_vivado_ip_0/resetn",
           "axi_interconnect_0/S00_ARESETN",
           "axi_interconnect_0/M00_ARESETN",
           "axi_interconnect_0/M01_ARESETN",
-          "axi4_moving_average_0/s00_axi_aresetn"
+          "neorv32_vivado_ip_0/resetn"
         ]
       }
     },

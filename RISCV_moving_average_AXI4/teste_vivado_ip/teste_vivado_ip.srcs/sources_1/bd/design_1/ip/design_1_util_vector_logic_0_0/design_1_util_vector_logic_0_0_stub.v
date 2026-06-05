@@ -1,13 +1,13 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sat Oct 11 20:23:16 2025
+// Date        : Fri Jun  5 12:19:37 2026
 // Host        : LAPTOP-E0ACQLBJ running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_util_vector_logic_0_0 -prefix
-//               design_1_util_vector_logic_0_0_ design_1_reset_inv_0_2_stub.v
-// Design      : design_1_reset_inv_0_2
+// Command     : write_verilog -force -mode synth_stub
+//               C:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0_stub.v
+// Design      : design_1_util_vector_logic_0_0
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7a35tcpg236-1
+// Device      : xc7a100tcsg324-1
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

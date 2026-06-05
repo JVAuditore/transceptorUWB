@@ -103,9 +103,7 @@ int main() {
         uint32_t background_counter = 0;
 
         while (data_ready_flag == 0) {
-            //neorv32_uart0_printf(" -> Aguardando IP...\n");
             background_counter++;
-            volatile uint32_t dummy = background_counter * 5;
         }
 
         // Imprime o resultado final na tela

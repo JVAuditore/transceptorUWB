@@ -18,7 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param project.vivado.isBlockSynthRun true
-create_project -in_memory -part xc7a35tcpg236-1
+create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -29,7 +29,7 @@ set_property parent.project_path C:/Users/Matheus/Documents/Faculdade/14_Semestr
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+set_property board_part digilentinc.com:nexys4:part0:1.1 [current_project]
 set_property ip_repo_paths {
   c:/Users/Matheus/Documents/Faculdade/14_Semestre/ip_repo/axi4_moving_average_ip_1.0
   c:/Users/Matheus/Documents/Faculdade/14_Semestre/neorv32/rtl/system_integration/neorv32_vivado_ip_work/packaged_ip
@@ -54,7 +54,7 @@ set cached_ip [config_ip_cache -export -no_bom  -dir C:/Users/Matheus/Documents/
 if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
 
-synth_design -top design_1_axi4_moving_average_0_2 -part xc7a35tcpg236-1 -mode out_of_context
+synth_design -top design_1_axi4_moving_average_0_2 -part xc7a100tcsg324-1 -mode out_of_context
 
 #---------------------------------------------------------
 # Generate Checkpoint/Stub/Simulation Files For IP Cache
