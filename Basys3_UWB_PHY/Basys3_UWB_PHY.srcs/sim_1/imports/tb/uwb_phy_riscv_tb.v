@@ -1,19 +1,24 @@
 //`timescale 1ns/1ps
 
-module uwb_phy_tb;
+module uwb_phy_riscv_tb;
 
   reg serial_input;
   reg sck = 0;
   reg rst_n;
-  reg cs_n;
-  reg mosi;
-  wire miso;
+  // reg cs_n;
+  // reg mosi;
+  // wire miso;
   wire serial_output;
+  reg           start_transmitter;
+  reg  [2119:0] MPDU_transmitter_reg;
+	reg  [23:0]   PHR_transmitter_reg;
+  wire [2119:0] MPDU_receiver_reg;
+	wire [23:0]   PHR_receiver_reg;
 
-  parameter [7:0] cmd_read_psdu  = 8'b10100001;
-  parameter [7:0] cmd_read_phr   = 8'b10100010;
-  parameter [7:0] cmd_write_psdu = 8'b10100011;
-  parameter [7:0] cmd_write_phr  = 8'b10100100;
+  // parameter [7:0] cmd_read_psdu  = 8'b10100001;
+  // parameter [7:0] cmd_read_phr   = 8'b10100010;
+  // parameter [7:0] cmd_write_psdu = 8'b10100011;
+  // parameter [7:0] cmd_write_phr  = 8'b10100100;
 
   reg [23:0] phr_transmitter = 24'b111000000000000000000100;
   reg [39:0] phr_transmitter_expected = 40'b1011111100101011111000000000000000000100;
@@ -47,57 +52,35 @@ module uwb_phy_tb;
   // Clock generation
   always #5 sck = ~sck;
 
-
-  uwb_phy uuv(
-    .serial_input(serial_input),
+  uwb_phy_riscv uuv(
     .sck(sck),
-    .cs_n(cs_n),
-    .mosi(mosi),
-    .miso(miso),
     .rst_n(rst_n),
-    .serial_output(serial_output)
+    .serial_input(serial_input),
+    .serial_output(serial_output),
+    .start_transmitter(start_transmitter),
+    .MPDU_transmitter_reg(MPDU_transmitter_reg),
+    .PHR_transmitter_reg(PHR_transmitter_reg),
+    .MPDU_receiver_reg(MPDU_receiver_reg),
+    .PHR_receiver_reg(PHR_receiver_reg)
   );
 	
   initial #250000 $stop;
 
   initial begin
-    $dumpfile("uwb_phy.vcd");
-    $dumpvars(0,uwb_phy_tb); 
+    $dumpfile("uwb_phy_riscv.vcd");
+    $dumpvars(0,uwb_phy_riscv_tb); 
 
-    rst_n = 0; serial_input = 0; mosi = 0; cs_n = 1;
+    rst_n = 0; serial_input = 0; start_transmitter = 0; MPDU_transmitter_reg = 0; PHR_transmitter_reg = 0;
     #10;
-    rst_n = 1; serial_input = 0; mosi = 0; cs_n = 0;
-    #10;
-
-    ////////////////////////////////////////////// Tranceiver //////////////////////////////////////////////////////////
-
-    for(i = 7; i>=0; i=i-1) begin
-      rst_n = 1; serial_input = 0; mosi = cmd_write_phr[i]; cs_n = 0;
-      #10;
-    end
-
+    rst_n = 1; serial_input = 0; start_transmitter = 0; MPDU_transmitter_reg = 0; PHR_transmitter_reg = 0;
     #10;
 
-    for(i = 0; i<24; i=i+1) begin
-      rst_n = 1; serial_input = 0; mosi = phr_transmitter[i]; cs_n = 0;
-      #10;
-    end
+    ////////////////////////////////////////////// Transmitter //////////////////////////////////////////////////////////
+    $display("////////////////////////////////////////////// Transmitter Test //////////////////////////////////////////////////////////");
 
+    MPDU_transmitter_reg = psdu_transmitter;  PHR_transmitter_reg = phr_transmitter; start_transmitter = 1;
     #10;
-
-    for(i = 7; i>=0; i=i-1) begin
-      rst_n = 1; serial_input = 0; mosi = cmd_write_psdu[i]; cs_n = 0;
-      #10;
-    end
-
-    #10;
-
-    for(i = 0; i<2120; i=i+1) begin
-      rst_n = 1; serial_input = 0; mosi = psdu_transmitter[i]; cs_n = 0;
-      #10;
-    end
-
-    rst_n = 1; serial_input = 0; mosi = 0; cs_n = 0;
+    start_transmitter = 0;
 
     
 
@@ -105,7 +88,7 @@ module uwb_phy_tb;
     i = 0;
     while(i<mac_length) begin
       if(uuv.transmitter1.load_scrambler == 1) begin
-       // $display("d = %b; feedback = %b", uuv.transmitter1.scrambler1.d, uuv.transmitter1.scrambler1.feedback);
+//        $display("d = %b; feedback = %b", uuv.transmitter1.scrambler1.d, uuv.transmitter1.scrambler1.feedback);
         psdu_transmitter_fifo[i] =      uuv.transmitter1.scrambler_in;
         scrambler_transmitter_fifo[i] = uuv.transmitter1.scrambler_out;
         i = i+1;
@@ -134,11 +117,11 @@ module uwb_phy_tb;
       
     end
 
-    $display("Real     BCH = %b", interleaver_in_fifo[62:0]);
-    $display("Expected BCH = %b", bch_expected[62:0]);
+    $display("Real     BCH = %h", interleaver_in_fifo[62:0]);
+    $display("Expected BCH = %h", bch_expected[62:0]);
 
-    $display("Real     BCH = %b", interleaver_in_fifo[125:63]);
-    $display("Expected BCH = %b", bch_expected[125:63]);
+    $display("Real     BCH = %h", interleaver_in_fifo[125:63]);
+    $display("Expected BCH = %h", bch_expected[125:63]);
 
     // $display("Real     BCH = %b", interleaver_in_fifo[62:0]);
     // $display("Expected BCH = %b", bch_expected[62:0]);    
@@ -151,8 +134,8 @@ module uwb_phy_tb;
         if(serial_output==0) begin
           if(j==15) begin
             j = 0;
-            // $display("SHR sequence bit:");
-            // $display(i);
+            //$display("SHR sequence bit:");
+            //$display(i);
             if(i == -1)
               shr_detected = 1;
           end else begin
@@ -166,7 +149,7 @@ module uwb_phy_tb;
         if(serial_output == c1[i]) begin
           j = 1;
           i = i-1;
-          // $display("SHR_counter: ", uuv.transmitter1.SHR_counter);
+          //$display("SHR_counter: ", uuv.transmitter1.SHR_counter);
         end else begin
           j = 0;
           i = 62;
@@ -188,48 +171,58 @@ module uwb_phy_tb;
     $display("PHR_expected: %b", phr_transmitter_expected);
     $display("PHR         : %b", phr_fifo);
 
+    $display("PHR_expected:                 %h", phr_transmitter);
+    $display("PHR_expected: %h", phr_transmitter_expected);
+    $display("PHR         : %h", phr_fifo);
+
     for(i=0; i<126; i=i+1) begin
       psdu_fifo[i] = serial_output;
       #10;
     end
 
     $display("PSDU_expected: %h", psdu_transmitter_expected[125:0]);
-    $display("PSDU: %h", psdu_fifo[125:0]);
+    $display("PSDU:          %h", psdu_fifo[125:0]);
 
     ////////////////////////////////////////////// Receiver //////////////////////////////////////////////////////////
-
-    // cs_n = 1;
-    // // Send 
-    // for(j = 0; j < 4; j = j+1) begin
-      // for(i = 63; i>0; i=i-1) begin
-        // serial_input = c1[i-1];
-        // #10;
-        // serial_input = 0;
-        // #150;
-      // end
-    // end
-
-    // for(i = 63; i>0; i=i-1) begin
-        // serial_input = !c1[i-1];
-        // #10;
-        // serial_input = 0;
-        // #150;
-    // end
-
-    // for(i = 0; i<40; i=i+1) begin
-        // serial_input = phr_transmitter_expected[i];
-        // #10;
-    // end
-
-    // for(i = 0; i<126; i=i+1) begin
-        // serial_input = psdu_transmitter_expected[i];
-        // #10;
-    // end
+    $display("////////////////////////////////////////////// Receiver Test //////////////////////////////////////////////////////////");
 
 
-    // while(!uuv.receiver1.receiver_a1.deinterleaver1.done) begin
-      // #10;
-    // end
+    rst_n = 0; serial_input = 0;
+    #10;
+    rst_n = 1; serial_input = 0;
+    #10;
+
+    // Send 
+    for(j = 0; j < 4; j = j+1) begin
+      for(i = 63; i>0; i=i-1) begin
+        serial_input = c1[i-1];
+        #10;
+        serial_input = 0;
+        #150;
+      end
+    end
+
+    for(i = 63; i>0; i=i-1) begin
+        serial_input = !c1[i-1];
+        #10;
+        serial_input = 0;
+        #150;
+    end
+
+    for(i = 0; i<40; i=i+1) begin
+        serial_input = phr_transmitter_expected[i];
+        #10;
+    end
+
+    for(i = 0; i<126; i=i+1) begin
+        serial_input = psdu_transmitter_expected[i];
+        #10;
+    end
+
+
+    while(!uuv.receiver1.receiver_a1.deinterleaver1.done) begin
+      #10;
+    end
 
     // $display("Received interleaved: %h", uuv.receiver1.receiver_a1.deinterleaver1.A_reg[191:191-125]);
     // $display("Expected interleaved: %h", psdu_transmitter_expected[125:0]);
@@ -242,63 +235,27 @@ module uwb_phy_tb;
     // $display("Expected deinterleaved parity: %h", bch_expected[125:114]);
     // $display("Expected deinterleaved parity: %h", bch_expected[62:51]);
 
-    // while(!uuv.receiver1.receiver_b1.ready) begin
-      // #10;
-    // end
+    while(!uuv.receiver1.receiver_b1.ready) begin
+      #10;
+    end
 
-    // #10;
+    #10;
 
-    // while(!uuv.receiver1.receiver_b1.ready) begin
-      // #10;
-    // end
+    while(!uuv.receiver1.receiver_b1.ready) begin
+      #10;
+    end
 
-    // #100;
+    #100;
 
-    // $display("FIFO of PHR: %h", uuv.PHR_receiver_q);
-    // $display("FIFO of PSDU: %h", uuv.psdu_fifo);
+    $display("Received PHR: %h", PHR_receiver_reg);
+    $display("Expected PHR: %h\n", phr_transmitter);
 
-    // psdu_transmitter_fifo = 0;
-    // phr_receiver_fifo = 0;
-    // cs_n = 0;
-    // #10;
-    // for(i = 7; i>=0; i=i-1) begin
-      // rst_n = 1; serial_input = 0; mosi = cmd_read_phr[i]; cs_n = 0;
-      // #10;
-    // end
+    $display("Expected PSDU block 1: %h", bch_expected[113:63]);
+    $display("Received PSDU block 1: %h\n", MPDU_receiver_reg[2119:2069]);
 
-    // #10;
-    // for(i = 0; i<24; i=i+1) begin
-      // phr_receiver_fifo[i] = miso; cs_n = 0;
-      // #10;
-    // end
-
-    // $display("Received PHR: %h", phr_receiver_fifo);
-
-    // #10;
-
-    // for(i = 7; i>=0; i=i-1) begin
-      // rst_n = 1; serial_input = 0; mosi = cmd_read_psdu[i]; cs_n = 0;
-      // #10;
-    // end
+    $display("Expected PSDU block 2: %h", bch_expected[50:0]);
+    $display("Expected PSDU block 2: %h\n", MPDU_receiver_reg[2068:2018]);
     
-    // #10;
-
-    // for(i = 0; i<2120; i=i+1) begin
-      // psdu_transmitter_fifo[i] = miso; cs_n = 0;
-      // #10;
-    // end
-
-    // $display("Received PSDU: %h", psdu_transmitter_fifo);
-    
-    // $display("Expected PSDU block 1: %h", bch_expected[113:63]);
-    // $display("Received PSDU block 1: %h\n", psdu_transmitter_fifo[2119:2069]);
-
-    // $display("Expected PSDU block 2: %h", bch_expected[50:0]);
-    // $display("Expected PSDU block 2: %h\n", psdu_transmitter_fifo[2068:2018]);
-
-
-    // #20;
-    // rst_n = 1; serial_input = 0; mosi = 0; cs_n = 0;
 
     $finish;
   end

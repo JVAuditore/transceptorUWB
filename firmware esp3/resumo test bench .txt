@@ -1,5 +1,6 @@
-No receiver inicia no input Injetando o valor de c1 que tem 62 bits
-a cada clk e apos 15clk input recebe 0 e continua até o fim dos 62 bits. 
+No receiver inicia no input Injetando o valor de c1 (sequencia de kasami) que tem 63 bits
+a cada clk e apos 15clk input recebe 0 e continua até o fim dos 63 bits. 
+Ou seja, entre cada bit da sequencia de kasami são enviados 15 bits 0.
 	Se repete o envio de c1 4x
 	Depois envia c1 negado seguindo o mesmo padrao a cada clk e 0 apos 15 clk
 	Depois se envia o phr_transmitter_expected que tem 40 bits

@@ -1,4 +1,6 @@
 #include <SPI.h>
+#include <esp_cpu.h>      // Para esp_cpu_get_ccount()
+#include <esp_clk_tree.h> // Para obter frequência da CPU (opcional)
 
 // Definição dos pinos
 #define CS_PIN            15
@@ -8,11 +10,7 @@
 #define RST_PIN           2
 #define SERIAL_INPUT_PIN  4       // Dado serial para a Basys
 #define BUTTON_PIN        5       // Botão (GND quando pressionado)
-#define CLK_OUT_PIN       17      // Saída de clock de 1 MHz (PWM contínuo)
-
-// Definição de clock
-#define FREQ 1000000    // 1 MHz
-#define RESOLUTION 2    // 2 bits (valores duty: 0..3)
+#define CLK_OUT_PIN       17      // Saída de clock de 1 MHz (para a Basys)
 
 // Comandos SPI
 const uint8_t CMD_READ_PSDU  = 0xA1;
@@ -20,7 +18,7 @@ const uint8_t CMD_READ_PHR   = 0xA2;
 const uint8_t CMD_WRITE_PSDU = 0xA3;
 const uint8_t CMD_WRITE_PHR  = 0xA4;
 
-// Dados de teste
+// Dados de teste (mantidos originais)
 const uint64_t c1 = 0x7D59B6E5C5E52910;                         // SHR (63 bits)
 const uint8_t phr_expected[5] = {0xBF, 0x2B, 0xE0, 0x00, 0x04}; // PHR (40 bits)
 const uint8_t psdu_expected[16] = {                             // PSDU (126 bits)
@@ -31,6 +29,18 @@ const uint8_t phr_original[3]   = {0xE0, 0x00, 0x04};           // 24 bits esper
 const uint8_t psdu_original[265] = {0};
 
 bool test_running = false;
+
+// // ================== ATRAVESSAR TEMPO COM PRECISÃO (nanossegundos) ==================
+// void delay_ns(uint32_t ns) {
+//   uint32_t cpu_freq_mhz = esp_clk_cpu_freq() / 1000000;   // Ex: 240
+//   uint32_t cycles_per_ns = cpu_freq_mhz / 1000;           // 240 MHz -> 0,24 ciclos/ns
+//   uint32_t cycles_needed = (ns * cycles_per_ns) / 1000;   // Ex: 500 ns -> 120 ciclos
+//   uint32_t start = esp_cpu_get_ccount();
+//   while ((esp_cpu_get_ccount() - start) < cycles_needed) {
+//     asm volatile ("nop");
+//   }
+// }
+
 
 // ================== ATRAVESSAR TEMPO COM PRECISÃO (nanossegundos) ==================
 void delay_ns(uint32_t ns) {
@@ -43,23 +53,33 @@ void delay_ns(uint32_t ns) {
   }
 }
 
-// ================== ENVIA UM BIT COM CLOCK DE 1 MHz (geração manual) ==================
+// ================== ENVIA UM BIT COM CLOCK DE 1 MHz ==================
+// O clock é gerado no pino CLK_OUT_PIN, com período total de 1 µs (500 ns alto, 500 ns baixo).
+// O dado no SERIAL_INPUT_PIN é alterado 250 ns antes da borda de subida do clock,
+// garantindo setup time para o escravo.
 void send_bit_with_clock(bool bit) {
+  // 1) Define o valor do dado (250 ns antes da subida do clock)
   digitalWrite(SERIAL_INPUT_PIN, bit);
-  delay_ns(250);                     // Setup time antes da borda
+  delay_ns(250);   // Tempo de setup (antes da borda)
+
+  // 2) Borda de subida do clock
   digitalWrite(CLK_OUT_PIN, HIGH);
-  delay_ns(500);
+  delay_ns(500);   // Mantém clock alto por 500 ns
+
+  // 3) Borda de descida do clock
   digitalWrite(CLK_OUT_PIN, LOW);
-  delay_ns(250);                     // Completa o período de 1 µs
+  delay_ns(250);   // Restante do período (total 1 µs)
 }
 
-// ================== ENVIO DOS CAMPOS ==================
+// ================== ENVIO DOS DIFERENTES CAMPOS (usando o clock de 1 MHz) ==================
 void send_serial_preamble() {
+  // 4 repetições da sequência C1
   for (int j = 0; j < 4; j++) {
     for (int i = 62; i >= 0; i--) {
       send_bit_with_clock((c1 >> i) & 0x01);
     }
   }
+  // Complemento do C1
   for (int i = 62; i >= 0; i--) {
     send_bit_with_clock(!((c1 >> i) & 0x01));
   }
@@ -83,7 +103,7 @@ void send_serial_psdu() {
   }
 }
 
-// ================== FUNÇÕES SPI ==================
+// ================== FUNÇÕES SPI (INALTERADAS) ==================
 void spi_read(uint8_t cmd, uint8_t* buffer, int len) {
   digitalWrite(CS_PIN, LOW);
   delayMicroseconds(10);
@@ -117,15 +137,8 @@ void verify_data(const char* label, const uint8_t* expected, uint8_t* received, 
   }
 }
 
-// ================== TESTE DE RECEPÇÃO ==================
 void run_reception_test() {
-  Serial.println("=== TESTE DE RECEPÇÃO (clock 1 MHz contínuo) ===");
-
-  // --- Fase 1: Envio serial dos bits (clock manual) ---
-  // Remove o PWM do pino para controle manual (API atualizada)
-  ledcDetach(CLK_OUT_PIN);
-  pinMode(CLK_OUT_PIN, OUTPUT);
-  digitalWrite(CLK_OUT_PIN, LOW);
+  Serial.println("=== TESTE DE RECEPÇÃO (1 MHz clock) ===");
 
   Serial.println("Enviando preâmbulo SHR...");
   send_serial_preamble();
@@ -136,16 +149,6 @@ void run_reception_test() {
   Serial.println("Enviando PSDU...");
   send_serial_psdu();
 
-  // --- Fase 2: Leitura SPI (com PWM religado para clock contínuo) ---
-  // Configura o PWM de 1 MHz (API nova: ledcAttach já configura canal e frequência)
-  bool pwm_ok = ledcAttach(CLK_OUT_PIN, FREQ, RESOLUTION);  
-  if (!pwm_ok) {
-    Serial.println("Erro: Falha ao configurar PWM no pino 17!");
-    return;  // Aborta o teste
-  }
-  // Ajusta duty cycle para 50%: duty = 2^(RESOLUTION-1) = 2^(1) = 2
-  ledcWrite(CLK_OUT_PIN, 2);  // 2/4 = 0.5
-
   delay(100); // Aguarda processamento na Basys
 
   Serial.println("Lendo dados via SPI...");
@@ -154,7 +157,6 @@ void run_reception_test() {
   spi_read(CMD_READ_PHR, phr_received, sizeof(phr_received));
   spi_read(CMD_READ_PSDU, psdu_received, sizeof(psdu_received));
 
-  // Resultados
   Serial.println("\n=== RESULTADOS ===");
   verify_data("PHR", phr_original, phr_received, sizeof(phr_original));
   verify_data("PSDU (primeiros 8 bytes)", psdu_original, psdu_received, 8);
@@ -165,9 +167,6 @@ void run_reception_test() {
   Serial.print("\nRecebido: 0x");
   for (int i = 0; i < sizeof(phr_received); i++) Serial.printf("%02X", phr_received[i]);
   Serial.println();
-
-  // (Opcional) Desliga PWM após teste, mas o pino ficará como saída do último nível
-  // ledcDetach(CLK_OUT_PIN);   // Descomente se quiser desligar o clock ao final
 }
 
 void start_test() {
@@ -178,7 +177,7 @@ void start_test() {
   test_running = false;
 }
 
-// ================== SETUP ==================
+// ================== SETUP E LOOP ==================
 void setup() {
   Serial.begin(115200);
 
@@ -188,37 +187,40 @@ void setup() {
   pinMode(CLK_OUT_PIN, OUTPUT);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 
-  digitalWrite(CLK_OUT_PIN, LOW);
+  digitalWrite(CLK_OUT_PIN, LOW);   // Clock começa em nível baixo
   digitalWrite(CS_PIN, HIGH);
   digitalWrite(RST_PIN, HIGH);
 
-  // Inicializa SPI
   SPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN, CS_PIN);
   SPI.setDataMode(SPI_MODE0);
   SPI.setBitOrder(MSBFIRST);
   SPI.setClockDivider(SPI_CLOCK_DIV16);
 
-  // Reset da Basys 3
+  // Reset inicial da Basys
   digitalWrite(RST_PIN, LOW);
   delay(10);
   digitalWrite(RST_PIN, HIGH);
   delay(10);
 
-  Serial.println("Sistema pronto. Clock de 1 MHz será ativado durante o teste.");
-  Serial.println("Pressione o botão para iniciar.");
+  Serial.println("Sistema pronto. Clock de 1 MHz ativo durante a transmissão.");
+  // Serial.println("Pressione o botão para iniciar o teste.");
+  Serial.println("Freq ESP32");
+  Serial.println(getCpuFrequencyMhz());
+
 }
 
-// ================== LOOP ==================
 void loop() {
-  static unsigned long last_debounce = 0;
-  static bool last_state = HIGH;
-  bool now = digitalRead(BUTTON_PIN);
+  // static unsigned long last_debounce = 0;
+  // static bool last_state = HIGH;
+  // bool now = digitalRead(BUTTON_PIN);
 
-  if (now != last_state) last_debounce = millis();
-  if ((millis() - last_debounce) > 30 && now == LOW && !test_running) {
-    start_test();
-    delay(200);
-  }
-  last_state = now;
-  delay(10);
+  // if (now != last_state) last_debounce = millis();
+  // if ((millis() - last_debounce) > 30 && now == LOW && !test_running) {
+  //   start_test();
+  //   delay(200);
+  // }
+  // last_state = now;
+  // delay(10);
+
+  send_bit_with_clock(1);
 }

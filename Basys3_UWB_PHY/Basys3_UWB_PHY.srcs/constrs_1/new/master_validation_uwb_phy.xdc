@@ -9,14 +9,14 @@ set_property PACKAGE_PIN W5 [get_ports sys_clk]
 	create_clock -add -name sys_clk_pin -period 1000.00 -waveform {0 500} [get_ports sys_clk]
  
 ## Switches
-#set_property PACKAGE_PIN V17 [get_ports {rst_n}]					
-#	set_property IOSTANDARD LVCMOS33 [get_ports {rst_n}]
-#set_property PACKAGE_PIN V16 [get_ports {sw[1]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[1]}]
-#set_property PACKAGE_PIN W16 [get_ports {sw[2]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[2]}]
-#set_property PACKAGE_PIN W17 [get_ports {sw[3]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[3]}]
+set_property PACKAGE_PIN V17 [get_ports {rst_n}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {rst_n}]
+set_property PACKAGE_PIN V16 [get_ports {start_serial_input}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {start_serial_input}]
+set_property PACKAGE_PIN W16 [get_ports {en_serial_output}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {en_serial_output}]
+#set_property PACKAGE_PIN W17 [get_ports {en_serial_output}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {en_serial_output}]
 #set_property PACKAGE_PIN W15 [get_ports {sw[4]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw[4]}]
 #set_property PACKAGE_PIN V15 [get_ports {sw[5]}]					
@@ -44,8 +44,8 @@ set_property PACKAGE_PIN W5 [get_ports sys_clk]
  
 
 ## LEDs
-#set_property PACKAGE_PIN U16 [get_ports {led[0]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led[0]}]
+set_property PACKAGE_PIN U16 [get_ports {ON_uwb_phy}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {ON_uwb_phy}]
 #set_property PACKAGE_PIN E19 [get_ports {led[1]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {led[1]}]
 #set_property PACKAGE_PIN U19 [get_ports {led[2]}]					
@@ -108,14 +108,14 @@ set_property PACKAGE_PIN W5 [get_ports sys_clk]
 
 
 ##Buttons
-#set_property PACKAGE_PIN U18 [get_ports btnC]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnC]
+set_property PACKAGE_PIN U18 [get_ports start_transmitter]						
+	set_property IOSTANDARD LVCMOS33 [get_ports start_transmitter]
 #set_property PACKAGE_PIN T18 [get_ports btnU]						
 	#set_property IOSTANDARD LVCMOS33 [get_ports btnU]
 #set_property PACKAGE_PIN W19 [get_ports btnL]						
 	#set_property IOSTANDARD LVCMOS33 [get_ports btnL]
-#set_property PACKAGE_PIN T17 [get_ports btnR]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnR]
+#set_property PACKAGE_PIN T17 [get_ports start_transmitter]						
+#	set_property IOSTANDARD LVCMOS33 [get_ports start_transmitter]
 #set_property PACKAGE_PIN U17 [get_ports btnD]						
 	#set_property IOSTANDARD LVCMOS33 [get_ports btnD]
  
@@ -123,30 +123,30 @@ set_property PACKAGE_PIN W5 [get_ports sys_clk]
 
 ##Pmod Header JA
 ##Sch name = JA1
-set_property PACKAGE_PIN J1 [get_ports {cs_n}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {cs_n}]
-#Sch name = JA2
-set_property PACKAGE_PIN L2 [get_ports {spi_clk}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {spi_clk}]
-	set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets spi_clk_IBUF]
-#Sch name = JA3
-set_property PACKAGE_PIN J2 [get_ports {miso}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {miso}]
-#Sch name = JA4
-set_property PACKAGE_PIN G2 [get_ports {mosi}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {mosi}]
-##Sch name = JA7
-set_property PACKAGE_PIN H1 [get_ports {rst_n}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {rst_n}]
-##Sch name = JA8
-set_property PACKAGE_PIN K2 [get_ports {serial_input}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {serial_input}]
-##Sch name = JA9
-set_property PACKAGE_PIN H2 [get_ports {ext_clk}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {ext_clk}]
-##Sch name = JA10
-set_property PACKAGE_PIN G3 [get_ports {serial_output}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {serial_output}]
+#set_property PACKAGE_PIN J1 [get_ports {cs_n}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {cs_n}]
+##Sch name = JA2
+#set_property PACKAGE_PIN L2 [get_ports {spi_clk}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {spi_clk}]
+##	set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets spi_clk_IBUF]
+##Sch name = JA3
+#set_property PACKAGE_PIN J2 [get_ports {miso}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {miso}]
+##Sch name = JA4
+#set_property PACKAGE_PIN G2 [get_ports {mosi}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {mosi}]
+###Sch name = JA7
+#set_property PACKAGE_PIN H1 [get_ports {rst_n}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {rst_n}]
+###Sch name = JA8
+##set_property PACKAGE_PIN K2 [get_ports {serial_input}]					
+##	set_property IOSTANDARD LVCMOS33 [get_ports {serial_input}]
+###Sch name = JA9
+##set_property PACKAGE_PIN H2 [get_ports {ext_clk}]					
+##	set_property IOSTANDARD LVCMOS33 [get_ports {ext_clk}]
+###Sch name = JA10
+#set_property PACKAGE_PIN G3 [get_ports {serial_output}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {serial_output}]
 
 
 

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_uwb_viocore_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_uwb_viocore" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="55,483.479 ns"></ZoomStartTime>
+      <ZoomEndTime time="55,724.398 ns"></ZoomEndTime>
+      <Cursor1Time time="55,533.690 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="251"></NameColumnWidth>
+      <ValueColumnWidth column_width="113"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/tb_uwb_viocore/sys_clk" type="logic">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/gen_serial_in/serial_out" type="logic">
+      <obj_property name="ElementShortName">serial_out</obj_property>
+      <obj_property name="ObjectShortName">serial_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_a1/shr_detector1/serial_in" type="logic">
+      <obj_property name="ElementShortName">serial_in</obj_property>
+      <obj_property name="ObjectShortName">serial_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_a1/shr_detector1/zero_counter" type="array">
+      <obj_property name="ElementShortName">zero_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">zero_counter[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_a1/shr_detector1/bit_ok" type="logic">
+      <obj_property name="ElementShortName">bit_ok</obj_property>
+      <obj_property name="ObjectShortName">bit_ok</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_a1/shr_detector1/zero_finish" type="logic">
+      <obj_property name="ElementShortName">zero_finish</obj_property>
+      <obj_property name="ObjectShortName">zero_finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_a1/shr_detector1/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/psdu_fifo" type="array">
+      <obj_property name="ElementShortName">psdu_fifo[125:0]</obj_property>
+      <obj_property name="ObjectShortName">psdu_fifo[125:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/phr_fifo" type="array">
+      <obj_property name="ElementShortName">phr_fifo[39:0]</obj_property>
+      <obj_property name="ObjectShortName">phr_fifo[39:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_a1/deinterleaver_done" type="logic">
+      <obj_property name="ElementShortName">deinterleaver_done</obj_property>
+      <obj_property name="ObjectShortName">deinterleaver_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/shr_detected" type="logic">
+      <obj_property name="ElementShortName">shr_detected</obj_property>
+      <obj_property name="ObjectShortName">shr_detected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_b1/load_fifo" type="logic">
+      <obj_property name="ElementShortName">load_fifo</obj_property>
+      <obj_property name="ObjectShortName">load_fifo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_b1/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/receiver1/receiver_a1/crc_match" type="logic">
+      <obj_property name="ElementShortName">crc_match</obj_property>
+      <obj_property name="ObjectShortName">crc_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/PHR_block_reg" type="array">
+      <obj_property name="ElementShortName">PHR_block_reg[23:0]</obj_property>
+      <obj_property name="ObjectShortName">PHR_block_reg[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/PSDU_block1_reg" type="array">
+      <obj_property name="ElementShortName">PSDU_block1_reg[50:0]</obj_property>
+      <obj_property name="ObjectShortName">PSDU_block1_reg[50:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/uuv/psdu_fifo" type="array">
+      <obj_property name="ElementShortName">psdu_fifo[2119:0]</obj_property>
+      <obj_property name="ObjectShortName">psdu_fifo[2119:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uwb_viocore/PSDU_block2_reg" type="array">
+      <obj_property name="ElementShortName">PSDU_block2_reg[50:0]</obj_property>
+      <obj_property name="ObjectShortName">PSDU_block2_reg[50:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

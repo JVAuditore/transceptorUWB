@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_serial_intern_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_serial_intern" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="46.370000 us"></ZoomStartTime>
+      <ZoomEndTime time="57.320001 us"></ZoomEndTime>
+      <Cursor1Time time="55.495000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="251"></NameColumnWidth>
+      <ValueColumnWidth column_width="119"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="56" />
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/serial_input" type="logic">
+      <obj_property name="ElementShortName">serial_input</obj_property>
+      <obj_property name="ObjectShortName">serial_input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/gen_serial_in/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/gen_serial_in/high_phase" type="logic">
+      <obj_property name="ElementShortName">high_phase</obj_property>
+      <obj_property name="ObjectShortName">high_phase</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/gen_serial_in/low_cnt" type="array">
+      <obj_property name="ElementShortName">low_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">low_cnt[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/gen_serial_in/rep_cnt" type="array">
+      <obj_property name="ElementShortName">rep_cnt[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rep_cnt[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/gen_serial_in/bit_idx" type="array">
+      <obj_property name="ElementShortName">bit_idx[6:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_idx[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/shr_detected" type="logic">
+      <obj_property name="ElementShortName">shr_detected</obj_property>
+      <obj_property name="ObjectShortName">shr_detected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/crc_match" type="logic">
+      <obj_property name="ElementShortName">crc_match</obj_property>
+      <obj_property name="ObjectShortName">crc_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/hcs_load_finish" type="logic">
+      <obj_property name="ElementShortName">hcs_load_finish</obj_property>
+      <obj_property name="ObjectShortName">hcs_load_finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/hcs_counter" type="array">
+      <obj_property name="ElementShortName">hcs_counter[1:0]</obj_property>
+      <obj_property name="ObjectShortName">hcs_counter[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/load_PHR_counter" type="logic">
+      <obj_property name="ElementShortName">load_PHR_counter</obj_property>
+      <obj_property name="ObjectShortName">load_PHR_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/PHR_counter" type="array">
+      <obj_property name="ElementShortName">PHR_counter[4:0]</obj_property>
+      <obj_property name="ObjectShortName">PHR_counter[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/PHR_load_finish" type="logic">
+      <obj_property name="ElementShortName">PHR_load_finish</obj_property>
+      <obj_property name="ObjectShortName">PHR_load_finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/load_hcs_counter" type="logic">
+      <obj_property name="ElementShortName">load_hcs_counter</obj_property>
+      <obj_property name="ObjectShortName">load_hcs_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/clear_hcs_counter" type="logic">
+      <obj_property name="ElementShortName">clear_hcs_counter</obj_property>
+      <obj_property name="ObjectShortName">clear_hcs_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/sBCH_finish" type="logic">
+      <obj_property name="ElementShortName">sBCH_finish</obj_property>
+      <obj_property name="ObjectShortName">sBCH_finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/PSDU_load_finish" type="logic">
+      <obj_property name="ElementShortName">PSDU_load_finish</obj_property>
+      <obj_property name="ObjectShortName">PSDU_load_finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/deinterleaver_finish" type="logic">
+      <obj_property name="ElementShortName">deinterleaver_finish</obj_property>
+      <obj_property name="ObjectShortName">deinterleaver_finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/deinterleaver_load" type="logic">
+      <obj_property name="ElementShortName">deinterleaver_load</obj_property>
+      <obj_property name="ObjectShortName">deinterleaver_load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_a1/deinterleaver1/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/receiver1/receiver_b1/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/cs_n" type="logic">
+      <obj_property name="ElementShortName">cs_n</obj_property>
+      <obj_property name="ObjectShortName">cs_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/mosi" type="logic">
+      <obj_property name="ElementShortName">mosi</obj_property>
+      <obj_property name="ObjectShortName">mosi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/mosi_sync2" type="logic">
+      <obj_property name="ElementShortName">mosi_sync2</obj_property>
+      <obj_property name="ObjectShortName">mosi_sync2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/mosi" type="logic">
+      <obj_property name="ElementShortName">mosi</obj_property>
+      <obj_property name="ObjectShortName">mosi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/spi_clk" type="logic">
+      <obj_property name="ElementShortName">spi_clk</obj_property>
+      <obj_property name="ObjectShortName">spi_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/sys_clk" type="logic">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/sclk_rising" type="logic">
+      <obj_property name="ElementShortName">sclk_rising</obj_property>
+      <obj_property name="ObjectShortName">sclk_rising</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/PHR_receiver_sel" type="logic">
+      <obj_property name="ElementShortName">PHR_receiver_sel</obj_property>
+      <obj_property name="ObjectShortName">PHR_receiver_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/spi1/phr_receiver" type="logic">
+      <obj_property name="ElementShortName">phr_receiver</obj_property>
+      <obj_property name="ObjectShortName">phr_receiver</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/PHR_receiver_q" type="array">
+      <obj_property name="ElementShortName">PHR_receiver_q[23:0]</obj_property>
+      <obj_property name="ObjectShortName">PHR_receiver_q[23:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/load_PHR" type="logic">
+      <obj_property name="ElementShortName">load_PHR</obj_property>
+      <obj_property name="ObjectShortName">load_PHR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/load_phr_receiver" type="logic">
+      <obj_property name="ElementShortName">load_phr_receiver</obj_property>
+      <obj_property name="ObjectShortName">load_phr_receiver</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/corrected_bch_out" type="array">
+      <obj_property name="ElementShortName">corrected_bch_out[50:0]</obj_property>
+      <obj_property name="ObjectShortName">corrected_bch_out[50:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/load_fifo" type="logic">
+      <obj_property name="ElementShortName">load_fifo</obj_property>
+      <obj_property name="ObjectShortName">load_fifo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/psdu_receiver" type="logic">
+      <obj_property name="ElementShortName">psdu_receiver</obj_property>
+      <obj_property name="ObjectShortName">psdu_receiver</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/uuv/my_uwb/psdu_fifo" type="array">
+      <obj_property name="ElementShortName">psdu_fifo[2119:0]</obj_property>
+      <obj_property name="ObjectShortName">psdu_fifo[2119:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/miso" type="logic">
+      <obj_property name="ElementShortName">miso</obj_property>
+      <obj_property name="ObjectShortName">miso</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/psdu_transmitter_fifo" type="array">
+      <obj_property name="ElementShortName">psdu_transmitter_fifo[2119:0]</obj_property>
+      <obj_property name="ObjectShortName">psdu_transmitter_fifo[2119:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/serial_output" type="logic">
+      <obj_property name="ElementShortName">serial_output</obj_property>
+      <obj_property name="ObjectShortName">serial_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/phr_transmitter" type="array">
+      <obj_property name="ElementShortName">phr_transmitter[23:0]</obj_property>
+      <obj_property name="ObjectShortName">phr_transmitter[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/phr_transmitter_expected" type="array">
+      <obj_property name="ElementShortName">phr_transmitter_expected[39:0]</obj_property>
+      <obj_property name="ObjectShortName">phr_transmitter_expected[39:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/psdu_receiver_fifo" type="array">
+      <obj_property name="ElementShortName">psdu_receiver_fifo[95:0]</obj_property>
+      <obj_property name="ObjectShortName">psdu_receiver_fifo[95:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/shr_detected" type="logic">
+      <obj_property name="ElementShortName">shr_detected</obj_property>
+      <obj_property name="ObjectShortName">shr_detected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/shr_fifo" type="array">
+      <obj_property name="ElementShortName">shr_fifo[19:0]</obj_property>
+      <obj_property name="ObjectShortName">shr_fifo[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/phr_fifo" type="array">
+      <obj_property name="ElementShortName">phr_fifo[39:0]</obj_property>
+      <obj_property name="ObjectShortName">phr_fifo[39:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/psdu_fifo" type="array">
+      <obj_property name="ElementShortName">psdu_fifo[125:0]</obj_property>
+      <obj_property name="ObjectShortName">psdu_fifo[125:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/c1" type="array">
+      <obj_property name="ElementShortName">c1[62:0]</obj_property>
+      <obj_property name="ObjectShortName">c1[62:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/mac_length" type="array">
+      <obj_property name="ElementShortName">mac_length[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mac_length[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/cmd_read_psdu" type="array">
+      <obj_property name="ElementShortName">cmd_read_psdu[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_read_psdu[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/cmd_read_phr" type="array">
+      <obj_property name="ElementShortName">cmd_read_phr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_read_phr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/cmd_write_psdu" type="array">
+      <obj_property name="ElementShortName">cmd_write_psdu[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_write_psdu[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serial_intern/cmd_write_phr" type="array">
+      <obj_property name="ElementShortName">cmd_write_phr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_write_phr[7:0]</obj_property>
+   </wvobject>
+</wave_config>

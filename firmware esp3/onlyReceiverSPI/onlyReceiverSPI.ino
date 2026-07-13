@@ -6,13 +6,8 @@
 #define MOSI_PIN          13
 #define MISO_PIN          12
 #define RST_PIN           2
-#define SERIAL_INPUT_PIN  4       // Dado serial para a Basys
 #define BUTTON_PIN        5       // Botão (GND quando pressionado)
-#define CLK_OUT_PIN       17      // Saída de clock de 1 MHz (PWM contínuo)
 
-// Definição de clock
-#define FREQ 1000000    // 1 MHz
-#define RESOLUTION 2    // 2 bits (valores duty: 0..3)
 
 // Comandos SPI
 const uint8_t CMD_READ_PSDU  = 0xA1;
@@ -32,56 +27,6 @@ const uint8_t psdu_original[265] = {0};
 
 bool test_running = false;
 
-// ================== ATRAVESSAR TEMPO COM PRECISÃO (nanossegundos) ==================
-void delay_ns(uint32_t ns) {
-  uint32_t cpu_freq_mhz = getCpuFrequencyMhz();  // Pega a frequência da CPU (ex: 240)
-  uint32_t cycles_per_ns = cpu_freq_mhz / 1000;  // 240 MHz -> 0,24 ciclos/ns
-  uint32_t cycles_needed = (ns * cycles_per_ns) / 1000;
-  uint32_t start = ESP.getCycleCount();
-  while ((ESP.getCycleCount() - start) < cycles_needed) {
-    asm volatile ("nop");
-  }
-}
-
-// ================== ENVIA UM BIT COM CLOCK DE 1 MHz (geração manual) ==================
-void send_bit_with_clock(bool bit) {
-  digitalWrite(SERIAL_INPUT_PIN, bit);
-  delay_ns(250);                     // Setup time antes da borda
-  digitalWrite(CLK_OUT_PIN, HIGH);
-  delay_ns(500);
-  digitalWrite(CLK_OUT_PIN, LOW);
-  delay_ns(250);                     // Completa o período de 1 µs
-}
-
-// ================== ENVIO DOS CAMPOS ==================
-void send_serial_preamble() {
-  for (int j = 0; j < 4; j++) {
-    for (int i = 62; i >= 0; i--) {
-      send_bit_with_clock((c1 >> i) & 0x01);
-    }
-  }
-  for (int i = 62; i >= 0; i--) {
-    send_bit_with_clock(!((c1 >> i) & 0x01));
-  }
-}
-
-void send_serial_phr() {
-  for (int i = 0; i < 40; i++) {
-    int byte_index = i / 8;
-    int bit_index = 7 - (i % 8);
-    bool bit = (phr_expected[byte_index] >> bit_index) & 0x01;
-    send_bit_with_clock(bit);
-  }
-}
-
-void send_serial_psdu() {
-  for (int i = 0; i < 126; i++) {
-    int byte_index = i / 8;
-    int bit_index = 7 - (i % 8);
-    bool bit = (psdu_expected[byte_index] >> bit_index) & 0x01;
-    send_bit_with_clock(bit);
-  }
-}
 
 // ================== FUNÇÕES SPI ==================
 void spi_read(uint8_t cmd, uint8_t* buffer, int len) {
@@ -119,34 +64,11 @@ void verify_data(const char* label, const uint8_t* expected, uint8_t* received, 
 
 // ================== TESTE DE RECEPÇÃO ==================
 void run_reception_test() {
-  Serial.println("=== TESTE DE RECEPÇÃO (clock 1 MHz contínuo) ===");
+  digitalWrite(RST_PIN, LOW);
+  delay(10);
+  digitalWrite(RST_PIN, HIGH);
 
-  // --- Fase 1: Envio serial dos bits (clock manual) ---
-  // Remove o PWM do pino para controle manual (API atualizada)
-  ledcDetach(CLK_OUT_PIN);
-  pinMode(CLK_OUT_PIN, OUTPUT);
-  digitalWrite(CLK_OUT_PIN, LOW);
-
-  Serial.println("Enviando preâmbulo SHR...");
-  send_serial_preamble();
-
-  Serial.println("Enviando PHR...");
-  send_serial_phr();
-
-  Serial.println("Enviando PSDU...");
-  send_serial_psdu();
-
-  // --- Fase 2: Leitura SPI (com PWM religado para clock contínuo) ---
-  // Configura o PWM de 1 MHz (API nova: ledcAttach já configura canal e frequência)
-  bool pwm_ok = ledcAttach(CLK_OUT_PIN, FREQ, RESOLUTION);  
-  if (!pwm_ok) {
-    Serial.println("Erro: Falha ao configurar PWM no pino 17!");
-    return;  // Aborta o teste
-  }
-  // Ajusta duty cycle para 50%: duty = 2^(RESOLUTION-1) = 2^(1) = 2
-  ledcWrite(CLK_OUT_PIN, 2);  // 2/4 = 0.5
-
-  delay(100); // Aguarda processamento na Basys
+  delay(3000); // Aguarda processamento na Basys
 
   Serial.println("Lendo dados via SPI...");
   uint8_t phr_received[3] = {0};
@@ -166,8 +88,13 @@ void run_reception_test() {
   for (int i = 0; i < sizeof(phr_received); i++) Serial.printf("%02X", phr_received[i]);
   Serial.println();
 
-  // (Opcional) Desliga PWM após teste, mas o pino ficará como saída do último nível
-  // ledcDetach(CLK_OUT_PIN);   // Descomente se quiser desligar o clock ao final
+
+  Serial.println("\n--- Detalhes PSDU ---");
+  Serial.print("Esperado: 0x");
+  for (int i = 0; i < sizeof(psdu_original); i++) Serial.printf("%02X", psdu_original[i]);
+  Serial.print("\nRecebido: 0x");
+  for (int i = 0; i < sizeof(psdu_received); i++) Serial.printf("%02X", psdu_received[i]);
+  Serial.println();
 }
 
 void start_test() {
@@ -184,11 +111,8 @@ void setup() {
 
   pinMode(CS_PIN, OUTPUT);
   pinMode(RST_PIN, OUTPUT);
-  pinMode(SERIAL_INPUT_PIN, OUTPUT);
-  pinMode(CLK_OUT_PIN, OUTPUT);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 
-  digitalWrite(CLK_OUT_PIN, LOW);
   digitalWrite(CS_PIN, HIGH);
   digitalWrite(RST_PIN, HIGH);
 
