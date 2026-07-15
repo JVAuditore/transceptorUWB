@@ -1,0 +1,509 @@
+
+*** Running vivado
+    with args -log design_1_axi4_moving_average_0_2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi4_moving_average_0_2.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source design_1_axi4_moving_average_0_2.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Matheus/Documents/Faculdade/14_Semestre/ip_repo/axi4_moving_average_ip_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Matheus/Documents/Faculdade/14_Semestre/neorv32/rtl/system_integration/neorv32_vivado_ip_work/packaged_ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.cache/ip 
+Command: synth_design -top design_1_axi4_moving_average_0_2 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15600 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 970.969 ; gain = 234.891
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_axi4_moving_average_0_2' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ip/design_1_axi4_moving_average_0_2/synth/design_1_axi4_moving_average_0_2.vhd:82]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'axi4_moving_average_ip_v1_0' declared at 'c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0.vhd:5' bound to instance 'U0' of component 'axi4_moving_average_ip_v1_0' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ip/design_1_axi4_moving_average_0_2/synth/design_1_axi4_moving_average_0_2.vhd:148]
+INFO: [Synth 8-638] synthesizing module 'axi4_moving_average_ip_v1_0' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0.vhd:49]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'axi4_moving_average_ip_v1_0_S00_AXI' declared at 'c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:5' bound to instance 'axi4_moving_average_ip_v1_0_S00_AXI_inst' of component 'axi4_moving_average_ip_v1_0_S00_AXI' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'axi4_moving_average_ip_v1_0_S00_AXI' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:86]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:262]
+INFO: [Synth 8-226] default block is never used [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:399]
+WARNING: [Synth 8-614] signal 'sig_buffer_out' is read in the process but is not in the sensitivity list [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:394]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter CLK_DIVIDER bound to: 66 - type: integer 
+INFO: [Synth 8-3491] module 'top_moving_avg' declared at 'c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/top_moving_avg.v:3' bound to instance 'media_movel' of component 'top_moving_avg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:438]
+INFO: [Synth 8-6157] synthesizing module 'top_moving_avg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/top_moving_avg.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter CLK_DIVIDER bound to: 66 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'spi' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/spi.v:3]
+INFO: [Synth 8-6157] synthesizing module 'spi_fsm' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/spi_fsm.v:3]
+	Parameter idle bound to: 3'b001 
+	Parameter start_state bound to: 3'b010 
+	Parameter read_high bound to: 3'b011 
+	Parameter read_low bound to: 3'b100 
+	Parameter data_ready bound to: 3'b101 
+INFO: [Synth 8-6155] done synthesizing module 'spi_fsm' (1#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/spi_fsm.v:3]
+INFO: [Synth 8-6157] synthesizing module 'spi_op_block' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/spi_op_block.v:3]
+INFO: [Synth 8-6157] synthesizing module 'buf_reg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/buf_reg.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_d' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_d.v:3]
+	Parameter N bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_d' (2#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_d.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'buf_reg' (3#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/buf_reg.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_addr' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_addr.v:3]
+	Parameter N bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_addr' (4#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_addr.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'spi_op_block' (5#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/spi_op_block.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'spi' (6#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/spi.v:3]
+INFO: [Synth 8-6157] synthesizing module 'moving_average' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/moving_average.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fsm' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:3]
+	Parameter idle bound to: 2'b00 
+	Parameter read bound to: 2'b01 
+	Parameter data_ready bound to: 2'b10 
+	Parameter serialize_output bound to: 2'b11 
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:34]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'fsm' (7#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:3]
+INFO: [Synth 8-6157] synthesizing module 'op_block' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/op_block.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ORDER bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'shift_register' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/shift_register.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DATA_DEPTH bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'reg_8' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_8.v:3]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_8' (8#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_8.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'shift_register' (9#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/shift_register.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_8__parameterized0' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_8.v:3]
+	Parameter DATA_WIDTH bound to: 19 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_8__parameterized0' (9#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/reg_8.v:3]
+WARNING: [Synth 8-3848] Net serialized_Q in module/entity op_block does not have driver. [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/op_block.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'op_block' (10#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/op_block.v:3]
+WARNING: [Synth 8-7023] instance 'op_block0' of module 'op_block' has 7 connections declared, but only 6 given [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/moving_average.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'moving_average' (11#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/moving_average.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'top_moving_avg' (12#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/top_moving_avg.v:3]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:252]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:260]
+INFO: [Synth 8-256] done synthesizing module 'axi4_moving_average_ip_v1_0_S00_AXI' (13#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0_S00_AXI.vhd:86]
+INFO: [Synth 8-256] done synthesizing module 'axi4_moving_average_ip_v1_0' (14#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/hdl/axi4_moving_average_ip_v1_0.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi4_moving_average_0_2' (15#1) [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ip/design_1_axi4_moving_average_0_2/synth/design_1_axi4_moving_average_0_2.vhd:82]
+WARNING: [Synth 8-3331] design op_block has unconnected port serialized_Q
+WARNING: [Synth 8-3331] design axi4_moving_average_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design axi4_moving_average_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design axi4_moving_average_ip_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design axi4_moving_average_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design axi4_moving_average_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design axi4_moving_average_ip_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1046.609 ; gain = 310.531
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1046.609 ; gain = 310.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 1046.609 ; gain = 310.531
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1046.609 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1136.328 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.593 . Memory (MB): peak = 1138.301 ; gain = 1.973
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:01:02 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:01:02 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:01:02 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'spi_fsm'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              001
+             start_state |                              001 |                              010
+               read_high |                              010 |                              011
+              data_ready |                              011 |                              101
+                read_low |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'spi_fsm'
+WARNING: [Synth 8-327] inferring latch for variable 'mean_ld_reg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:53]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:37]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:37]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              001 |                               00
+                    read |                              010 |                               01
+              data_ready |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'fsm'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:37]
+WARNING: [Synth 8-327] inferring latch for variable 'shift_register_ld_reg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:54]
+WARNING: [Synth 8-327] inferring latch for variable 'ready_reg' [c:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.srcs/sources_1/bd/design_1/ipshared/f6c5/src/fsm.v:55]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:01:10 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     19 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               19 Bit    Registers := 1     
+	               16 Bit    Registers := 9     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 24    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 40    
+	   3 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module spi_fsm 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 3     
+Module reg_d 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module reg_addr 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+Module spi_op_block 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
+Module fsm 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 5     
+Module reg_8 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module reg_8__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               19 Bit    Registers := 1     
+Module op_block 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     19 Bit       Adders := 1     
+Module moving_average 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module top_moving_avg 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module axi4_moving_average_ip_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design design_1_axi4_moving_average_0_2 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design design_1_axi4_moving_average_0_2 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design design_1_axi4_moving_average_0_2 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design design_1_axi4_moving_average_0_2 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design design_1_axi4_moving_average_0_2 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design design_1_axi4_moving_average_0_2 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3332] Sequential element (U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/media_movel/spi_interface/fsm/FSM_sequential_state_reg[2]) is unused and will be removed from module design_1_axi4_moving_average_0_2.
+INFO: [Synth 8-3332] Sequential element (U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/media_movel/spi_interface/fsm/FSM_sequential_state_reg[1]) is unused and will be removed from module design_1_axi4_moving_average_0_2.
+INFO: [Synth 8-3332] Sequential element (U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/media_movel/spi_interface/fsm/FSM_sequential_state_reg[0]) is unused and will be removed from module design_1_axi4_moving_average_0_2.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:01:22 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:01:39 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:01:40 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:01:41 . Memory (MB): peak = 1138.301 ; gain = 402.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:01:48 . Memory (MB): peak = 1147.320 ; gain = 411.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:01:48 . Memory (MB): peak = 1147.320 ; gain = 411.242
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:01:49 . Memory (MB): peak = 1147.320 ; gain = 411.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:01:50 . Memory (MB): peak = 1147.320 ; gain = 411.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:01:50 . Memory (MB): peak = 1147.320 ; gain = 411.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:01:50 . Memory (MB): peak = 1147.320 ; gain = 411.242
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                      | RTL Name                                                                                                                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|design_1_axi4_moving_average_0_2 | U0/axi4_moving_average_ip_v1_0_S00_AXI_inst/media_movel/moving_avg_core/op_block0/shift_reg/genblk1[8].reg_shift/Q_reg[15] | 8      | 16    | YES          | NO                 | YES               | 16     | 0       | 
++---------------------------------+----------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    17|
+|2     |LUT1   |     1|
+|3     |LUT2   |    86|
+|4     |LUT3   |    19|
+|5     |LUT4   |    34|
+|6     |LUT5   |    16|
+|7     |LUT6   |    21|
+|8     |SRL16E |    16|
+|9     |FDCE   |    93|
+|10    |FDPE   |     1|
+|11    |FDRE   |   152|
+|12    |FDSE   |     3|
+|13    |LD     |     6|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------------------------------------+------------------------------------+------+
+|      |Instance                                     |Module                              |Cells |
++------+---------------------------------------------+------------------------------------+------+
+|1     |top                                          |                                    |   465|
+|2     |  U0                                         |axi4_moving_average_ip_v1_0         |   465|
+|3     |    axi4_moving_average_ip_v1_0_S00_AXI_inst |axi4_moving_average_ip_v1_0_S00_AXI |   465|
+|4     |      media_movel                            |top_moving_avg                      |   270|
+|5     |        moving_avg_core                      |moving_average                      |   160|
+|6     |          fsm0                               |fsm                                 |    13|
+|7     |          op_block0                          |op_block                            |   147|
+|8     |            reg_mean                         |reg_8__parameterized0               |    22|
+|9     |            shift_reg                        |shift_register                      |   120|
+|10    |              \genblk1[0].reg_shift          |reg_8                               |    17|
+|11    |              \genblk1[6].reg_shift          |reg_8_0                             |    16|
+|12    |              \genblk1[7].reg_shift          |reg_8_1                             |    16|
+|13    |              \genblk1[8].reg_shift          |reg_8_2                             |    48|
++------+---------------------------------------------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:01:51 . Memory (MB): peak = 1147.320 ; gain = 411.242
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:01:18 . Memory (MB): peak = 1147.320 ; gain = 319.551
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:01:52 . Memory (MB): peak = 1147.320 ; gain = 411.242
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1158.125 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1166.402 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  LD => LDCE: 6 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+65 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:02:20 . Memory (MB): peak = 1166.402 ; gain = 715.066
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1166.402 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.runs/design_1_axi4_moving_average_0_2_synth_1/design_1_axi4_moving_average_0_2.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 1166.402 ; gain = 0.000
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axi4_moving_average_0_2, cache-ID = b7aad8f82c7b6c86
+INFO: [Coretcl 2-1174] Renamed 12 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1166.402 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Matheus/Documents/Faculdade/14_Semestre/teste_vivado_ip/teste_vivado_ip.runs/design_1_axi4_moving_average_0_2_synth_1/design_1_axi4_moving_average_0_2.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_axi4_moving_average_0_2_utilization_synth.rpt -pb design_1_axi4_moving_average_0_2_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  5 12:19:39 2026...
