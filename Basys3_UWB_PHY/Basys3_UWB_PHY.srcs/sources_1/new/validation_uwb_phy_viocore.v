@@ -81,8 +81,8 @@ assign receiver_PSDU_block2 = PSDU_receiver[2068:2018];
 reg [23:0] PHR_transmitter_reg = 24'b111000000000000000000100;
 reg [2119:0] MPDU_transmitter_reg = 2120'b011110110011101100011001101101111110111011111110011100011010010110000000;
 
-assign PHR_transmitter = PHR_transmitter_reg;
-assign MPDU_transmitter = MPDU_transmitter_reg;
+// assign PHR_transmitter = PHR_transmitter_reg;
+// assign MPDU_transmitter = MPDU_transmitter_reg;
 
 // ------------------------------------------------------------
 // Máquina de estados do botao start trasmitter
@@ -156,14 +156,16 @@ Serial_read_IEEE802_15_6 gen_serial_out(
 );
 ///////////////////// Para o testBench comente o viocore /////////////////////////
 
-//vio_0 my_viocore (
-//  .clk(sys_clk),                    // input wire clk
-//  .probe_in0(receiver_PHR_block),       // input wire [23 : 0] probe_out0
-//  .probe_in1(receiver_PSDU_block1),     // input wire [50 : 0] probe_out1
-//  .probe_in2(receiver_PSDU_block2),      // input wire [50 : 0] probe_out2
-//  .probe_in3(transmitter_PHR_block),  // input wire [39 : 0] probe_in3
-//  .probe_in4(transmitter_MPDU_block)  // input wire [125 : 0] probe_in4
-//);
+vio_0 my_viocore (
+ .clk(sys_clk),                    // input wire clk
+ .probe_in0(receiver_PHR_block),       // input wire [23 : 0] probe_out0
+ .probe_in1(receiver_PSDU_block1),     // input wire [50 : 0] probe_out1
+ .probe_in2(receiver_PSDU_block2),      // input wire [50 : 0] probe_out2
+ .probe_in3(transmitter_PHR_block),  // input wire [39 : 0] probe_in3
+ .probe_in4(transmitter_MPDU_block)  // input wire [125 : 0] probe_in4
+ .probe_in4(PHR_transmitter)  // input wire [125 : 0] probe_in4
+ .probe_in4(MPDU_transmitter)  // input wire [125 : 0] probe_in4
+);
 
 
 endmodule

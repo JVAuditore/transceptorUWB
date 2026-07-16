@@ -11,18 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="71.690001 us"></ZoomEndTime>
-      <Cursor1Time time="0.000000 us"></Cursor1Time>
+      <ZoomStartTime time="21.108040 us"></ZoomStartTime>
+      <ZoomEndTime time="65.240249 us"></ZoomEndTime>
+      <Cursor1Time time="71.690000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="404"></NameColumnWidth>
-      <ValueColumnWidth column_width="178"></ValueColumnWidth>
+      <NameColumnWidth column_width="297"></NameColumnWidth>
+      <ValueColumnWidth column_width="190"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="13" />
    <wave_markers>
       <marker time="71595000" label="" />
-      <marker time="15995000" label="" />
+      <marker time="30000" label="" />
    </wave_markers>
    <wvobject fp_name="/tb_validation_uwb_phy_viocore/ON_uwb_phy" type="logic">
       <obj_property name="ElementShortName">ON_uwb_phy</obj_property>
@@ -35,6 +35,26 @@
    <wvobject fp_name="/tb_validation_uwb_phy_viocore/rst_n" type="logic">
       <obj_property name="ElementShortName">rst_n</obj_property>
       <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/my_uwb/serial_input" type="logic">
+      <obj_property name="ElementShortName">serial_input</obj_property>
+      <obj_property name="ObjectShortName">serial_input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/start_serial_input" type="logic">
+      <obj_property name="ElementShortName">start_serial_input</obj_property>
+      <obj_property name="ObjectShortName">start_serial_input</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/receiver_PHR_block" type="array">
+      <obj_property name="ElementShortName">receiver_PHR_block[23:0]</obj_property>
+      <obj_property name="ObjectShortName">receiver_PHR_block[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/receiver_PSDU_block1" type="array">
+      <obj_property name="ElementShortName">receiver_PSDU_block1[50:0]</obj_property>
+      <obj_property name="ObjectShortName">receiver_PSDU_block1[50:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/receiver_PSDU_block2" type="array">
+      <obj_property name="ElementShortName">receiver_PSDU_block2[50:0]</obj_property>
+      <obj_property name="ObjectShortName">receiver_PSDU_block2[50:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_validation_uwb_phy_viocore/start_transmitter" type="logic">
       <obj_property name="ElementShortName">start_transmitter</obj_property>
@@ -55,21 +75,5 @@
    <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/transmitter_MPDU_block" type="array">
       <obj_property name="ElementShortName">transmitter_MPDU_block[125:0]</obj_property>
       <obj_property name="ObjectShortName">transmitter_MPDU_block[125:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/my_uwb/serial_input" type="logic">
-      <obj_property name="ElementShortName">serial_input</obj_property>
-      <obj_property name="ObjectShortName">serial_input</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/receiver_PHR_block" type="array">
-      <obj_property name="ElementShortName">receiver_PHR_block[23:0]</obj_property>
-      <obj_property name="ObjectShortName">receiver_PHR_block[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/receiver_PSDU_block1" type="array">
-      <obj_property name="ElementShortName">receiver_PSDU_block1[50:0]</obj_property>
-      <obj_property name="ObjectShortName">receiver_PSDU_block1[50:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_validation_uwb_phy_viocore/uuv/receiver_PSDU_block2" type="array">
-      <obj_property name="ElementShortName">receiver_PSDU_block2[50:0]</obj_property>
-      <obj_property name="ObjectShortName">receiver_PSDU_block2[50:0]</obj_property>
    </wvobject>
 </wave_config>

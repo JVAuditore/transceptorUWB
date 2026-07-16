@@ -20,16 +20,18 @@
 
 
 module Serial_write_IEEE802_15_6(
-    input  clk,          
-    input  rst_n,        // reset assíncrono (ativo baixo)
-    input  start,        // sinal para iniciar a transmissão (pulso)
-    output serial_output // saída serial para o uwb_phy
+    input  			clk,          
+    input  			rst_n,        // reset assíncrono (ativo baixo)
+    input  			start,        // sinal para iniciar a transmissão (pulso)
+	input  [39:0]	PHR_input, 
+	input  [125:0]	PSDU_input, 
+    output 			serial_output // saída serial para o uwb_phy
 );
 
     // ------------------------------------------------------------
     localparam [62:0] C1 = 63'b111111010101100110111011010010011100010111100101000110000100000;
-    localparam [39:0] PHR_EXPECTED = 40'b1011111100101011111000000000000000000100;
-    localparam [125:0] PSDU_EXPECTED = 126'b111100000011001010000000010010010000001100000111000001000011000000111000011100101101010001100000110010011011001100110011101000;
+    // localparam [39:0] PHR_EXPECTED = 40'b1011111100101011111000000000000000000100;
+    // localparam [125:0] PSDU_EXPECTED = 126'b111100000011001010000000010010010000001100000111000001000011000000111000011100101101010001100000110010011011001100110011101000;
 
     // ------------------------------------------------------------
     // Máquina de estados
