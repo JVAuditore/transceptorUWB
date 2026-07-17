@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-// Date        : Sat Jul 11 20:40:38 2026
+// Date        : Fri Jul 17 15:45:41 2026
 // Host        : DESKTOP-2O6GH5E running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               d:/UNB_HD/TCC/transceptorUWB/Basys3_UWB_PHY/Basys3_UWB_PHY.gen/sources_1/ip/vio_0/vio_0_stub.v
@@ -16,8 +16,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "vio,Vivado 2023.1" *)
 module vio_0(clk, probe_in0, probe_in1, probe_in2, probe_in3, 
-  probe_in4)
-/* synthesis syn_black_box black_box_pad_pin="probe_in0[23:0],probe_in1[50:0],probe_in2[50:0],probe_in3[39:0],probe_in4[125:0]" */
+  probe_in4, probe_out0, probe_out1, probe_out2, probe_out3)
+/* synthesis syn_black_box black_box_pad_pin="probe_in0[23:0],probe_in1[50:0],probe_in2[50:0],probe_in3[39:0],probe_in4[125:0],probe_out0[39:0],probe_out1[125:0],probe_out2[23:0],probe_out3[72:0]" */
 /* synthesis syn_force_seq_prim="clk" */;
   input clk /* synthesis syn_isclock = 1 */;
   input [23:0]probe_in0;
@@ -25,4 +25,8 @@ module vio_0(clk, probe_in0, probe_in1, probe_in2, probe_in3,
   input [50:0]probe_in2;
   input [39:0]probe_in3;
   input [125:0]probe_in4;
+  output [39:0]probe_out0;
+  output [125:0]probe_out1;
+  output [23:0]probe_out2;
+  output [72:0]probe_out3;
 endmodule

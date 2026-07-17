@@ -43,7 +43,18 @@ module validation_uwb_phy_viocore(
 // );
 
 
+wire wserial_in;
+wire serial_output;
 
+wire [23:0]   	PHR_transmitter;
+wire [72:0]		MPDU_transmitter;
+
+wire [23:0] received_PHR_block;
+wire [2119:0] PSDU_received;
+
+reg pulse_start;
+reg [1:0] state, next_state;
+reg lock_start_transmitter = 0;
 
 uwb_phy_final my_uwb(
   .sck (sys_clk),
@@ -52,34 +63,28 @@ uwb_phy_final my_uwb(
   .serial_output (serial_output),
   .start_transmitter (pulse_start),
   .PHR_transmitter_reg (PHR_transmitter),
-  .MPDU_transmitter_reg (MPDU_transmitter),
-  .PHR_receiver_reg (receiver_PHR_block),
-  .PSDU_receiver_reg (PSDU_receiver)
+  .MPDU_transmitter_reg ({ {2047{1'b0}}, MPDU_transmitter}),
+  .PHR_receiver_reg (received_PHR_block),
+  .PSDU_receiver_reg (PSDU_received)
 );
 
-wire wserial_in;
-wire done_serial;
 
-wire serial_output;
+wire [50:0] received_PSDU_block1;
+wire [50:0] received_PSDU_block2;
 
-wire [23:0]   PHR_transmitter;
-wire [2119:0] MPDU_transmitter;
+wire [39:0] transmitted_PHR_block;
+wire [125:0] transmitted_MPDU_block;
 
-wire [23:0] receiver_PHR_block;
-wire [2119:0] PSDU_receiver;
-wire [50:0] receiver_PSDU_block1;
-wire [50:0] receiver_PSDU_block2;
-
-wire [39:0] transmitter_PHR_block;
-wire [125:0] transmitter_MPDU_block;
+wire [39:0] 	input_receiver_PHR;
+wire [125:0] 	input_receiver_PSDU;
 
 assign ON_uwb_phy = rst_n;
 
-assign receiver_PSDU_block1 = PSDU_receiver[2119:2069];
-assign receiver_PSDU_block2 = PSDU_receiver[2068:2018];
+assign received_PSDU_block1 = PSDU_received[2119:2069];
+assign received_PSDU_block2 = PSDU_received[2068:2018];
 
-reg [23:0] PHR_transmitter_reg = 24'b111000000000000000000100;
-reg [2119:0] MPDU_transmitter_reg = 2120'b011110110011101100011001101101111110111011111110011100011010010110000000;
+// reg [23:0] PHR_transmitter_reg = 24'b111000000000000000000100;
+// reg [2119:0] MPDU_transmitter_reg = 2120'b011110110011101100011001101101111110111011111110011100011010010110000000;
 
 // assign PHR_transmitter = PHR_transmitter_reg;
 // assign MPDU_transmitter = MPDU_transmitter_reg;
@@ -92,9 +97,8 @@ localparam [1:0]
     LOCK = 1,
     PULSE = 2;
 
-reg pulse_start;
-reg [1:0] state, next_state;
-reg lock_start_transmitter = 0;
+
+
 	
 // transição
 always @(posedge(sys_clk))
@@ -143,6 +147,8 @@ Serial_write_IEEE802_15_6 gen_serial_in(
     .clk (sys_clk),          
     .rst_n (rst_n),        // reset assíncrono (ativo baixo)
     .start (start_serial_input),        // sinal para iniciar a transmissão (pulso)
+	.PHR_input (input_receiver_PHR), 
+	.PSDU_input (input_receiver_PSDU), 
     .serial_output (wserial_in)   // saída serial para o uwb_phy
 );
 
@@ -151,20 +157,22 @@ Serial_read_IEEE802_15_6 gen_serial_out(
     .rst_n (rst_n),        // reset assíncrono (ativo baixo)
 	.en_read_serial (en_serial_output),
     .serial_in (serial_output),
-    .phr (transmitter_PHR_block),
-    .mpdu (transmitter_MPDU_block)
+    .phr (transmitted_PHR_block),
+    .mpdu (transmitted_MPDU_block)
 );
 ///////////////////// Para o testBench comente o viocore /////////////////////////
 
 vio_0 my_viocore (
  .clk(sys_clk),                    // input wire clk
- .probe_in0(receiver_PHR_block),       // input wire [23 : 0] probe_out0
- .probe_in1(receiver_PSDU_block1),     // input wire [50 : 0] probe_out1
- .probe_in2(receiver_PSDU_block2),      // input wire [50 : 0] probe_out2
- .probe_in3(transmitter_PHR_block),  // input wire [39 : 0] probe_in3
- .probe_in4(transmitter_MPDU_block)  // input wire [125 : 0] probe_in4
- .probe_in4(PHR_transmitter)  // input wire [125 : 0] probe_in4
- .probe_in4(MPDU_transmitter)  // input wire [125 : 0] probe_in4
+ .probe_in0(received_PHR_block),       // input wire [23 : 0] probe_out0
+ .probe_in1(received_PSDU_block1),     // input wire [50 : 0] probe_out1
+ .probe_in2(received_PSDU_block2),      // input wire [50 : 0] probe_out2
+ .probe_in3(transmitted_PHR_block),  // input wire [39 : 0] probe_in3
+ .probe_in4(transmitted_MPDU_block),  // input wire [125 : 0] probe_in4
+ .probe_out0(input_receiver_PHR),  // output wire [39 : 0] probe_out0
+ .probe_out1(input_receiver_PSDU),  // output wire [125 : 0] probe_out1
+ .probe_out2(PHR_transmitter),  // output wire [23 : 0] probe_out2
+ .probe_out3(MPDU_transmitter)  // output wire [72 : 0] probe_out3
 );
 
 

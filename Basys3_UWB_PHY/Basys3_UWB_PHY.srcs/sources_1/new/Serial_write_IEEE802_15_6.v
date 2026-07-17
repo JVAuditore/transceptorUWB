@@ -30,8 +30,8 @@ module Serial_write_IEEE802_15_6(
 
     // ------------------------------------------------------------
     localparam [62:0] C1 = 63'b111111010101100110111011010010011100010111100101000110000100000;
-    // localparam [39:0] PHR_EXPECTED = 40'b1011111100101011111000000000000000000100;
-    // localparam [125:0] PSDU_EXPECTED = 126'b111100000011001010000000010010010000001100000111000001000011000000111000011100101101010001100000110010011011001100110011101000;
+    // localparam [39:0] PHR_input = 40'b1011111100101011111000000000000000000100;
+    // localparam [125:0] PSDU_input = 126'b111100000011001010000000010010010000001100000111000001000011000000111000011100101101010001100000110010011011001100110011101000;
 
     // ------------------------------------------------------------
     // Máquina de estados
@@ -135,7 +135,7 @@ module Serial_write_IEEE802_15_6(
 
 				
 				SEND_PHR: begin
-                    serial_out <= PHR_EXPECTED[bit_idx];
+                    serial_out <= PHR_input[bit_idx];
                     if (bit_idx == 7'd39) begin
                         state   <= SEND_PSDU;
                         bit_idx <= 7'd0;  // 126 bits -> índices 125..0
@@ -146,7 +146,7 @@ module Serial_write_IEEE802_15_6(
  
 
 				SEND_PSDU: begin
-                    serial_out <= PSDU_EXPECTED[bit_idx];
+                    serial_out <= PSDU_input[bit_idx];
                     if (bit_idx == 7'd125) begin
                         state <= FINISHED;
                     end else begin
