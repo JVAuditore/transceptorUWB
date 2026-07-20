@@ -41,7 +41,7 @@ def interleaver(m):
     m_out = len(m) * [0]
 
     for i in range(len(m)):
-        print(i*37 % len(m))
+        # print(i*37 % len(m))
         m_out[i*37 % len(m)] = m[i]
 
     return m_out
@@ -72,7 +72,20 @@ def scrambler(m, ss):
 
     return m_out
 
-
+def bin2hex(bits):
+    """
+    Converte qualquer iterável de bits (0/1) para string hexadecimal.
+    Aceita listas, arrays, galois.GF2, etc.
+    """
+    if not bits:
+        return "0"
+    valor = 0
+    for b in bits:
+        bit = int(b)          # CONVERSÃO FORÇADA PARA INT PYTHON
+        valor = (valor << 1) | bit
+    width = len(bits)
+    hex_digits = (width + 3) // 4
+    return f"{valor:0{hex_digits}X}"
 
 phr = 0xe00004 # 0xe00004
 mpdu = [] # 0x30000000000aa
@@ -161,6 +174,10 @@ print('reg [23:0] phr_transmitter = 24\'b', end='')
 print_bitfield(bitfieldn(phr, 24))
 print(';')
 
+print('reg [23:0] phr_transmitter = 24\'h', end='')
+print_bitfield(bin2hex(bitfieldn(phr, 24)))
+print(';')
+
 print('reg [39:0] phr_transmitter_expected = 40\'b', end='')
 
 # print(bitfieldn(phr, 24))
@@ -175,15 +192,26 @@ phr_bch.reverse()
 print_bitfield(phr_bch)
 print(';')
 
-print('reg [2119:0] psdu_transmitter = 2120\'b', end='')
+print('reg [39:0] phr_transmitter_expected = 40\'h', end='')
+print_bitfield(bin2hex(phr_bch))
+print(';')
 
+print('reg [2119:0] psdu_transmitter = 2120\'b', end='')
 print_bitfield(mpdu_bin)
+print(';')
+
+print('reg [2119:0] psdu_transmitter = 2120\'h', end='')
+print_bitfield(bin2hex(mpdu_bin))
 print(';')
 
 print('reg [2623:0] psdu_transmitter_expected = 2624\'b', end='')
 
 psdu.reverse()
 print_bitfield(psdu)
+print(';')
+
+print('reg [2623:0] psdu_transmitter_expected = 2624\'h', end='')
+print_bitfield(bin2hex(psdu))
 print(';')
 
 print('reg [2119:0] scrambler_expected = 2120\'b', end='')
@@ -194,8 +222,34 @@ print('reg [2119:0] bch_expected = 2120\'b', end='')
 print_bitfield(mpdu_bch)
 print(';')
 
+# Supondo que 'mpdu_bch' seja a lista de 126 bits
+block1_bits = mpdu_bch[12:63]     # 51 bits (Verilog [113:63])
+block2_bits = mpdu_bch[75:126]    # 51 bits (Verilog [50:0])
 
-print(phr_hcs)
+
+print('reg [113:63] Expected PSDU block 1 = 51\'b', end='')
+print_bitfield(block1_bits)
+# print(';')
+print('reg [50:0] Expected PSDU block 2 = 51\'b', end='')
+print_bitfield(block2_bits)
+print(';')
+
+# Convertendo para hex
+block1_hex = bin2hex(block1_bits)  # 13 dígitos hex (51 bits)
+block2_hex = bin2hex(block2_bits)  # 13 dígitos hex (51 bits)
+
+# Imprimindo no formato Verilog
+print("\n\n\n ///////// Viocore interface /////////// \n")
+print(f"reg [39:0] PHR_transmitter = hex {bin2hex(bitfieldn(phr, 24))}")
+print(f"reg [71:0] MPDU_transmitter = hex {bin2hex(mpdu_bin)}")
+print(f"reg [39:0] transmitted_PHR_block = hex {bin2hex(phr_bch)}")
+print(f"reg [125:0] transmitted_MPDU_block = hex {bin2hex(psdu)}")
+print(f"reg [39:0] input_receiver_PHR = hex {bin2hex(phr_bch)}")
+print(f"reg [125:0] input_receiver_PSDU = hex {bin2hex(psdu)}")
+print(f"reg [23:0] received_PHR_block = hex {bin2hex(bitfieldn(phr, 24))}")
+print(f"reg [113:63] received_PSDU_block1 = hex {block1_hex}")
+print(f"reg [50:0] received_PSDU_block2 = hex {block2_hex}")
+# print(phr_hcs)
 
 
 # for i in range(1000):

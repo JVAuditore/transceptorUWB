@@ -47,7 +47,7 @@ wire wserial_in;
 wire serial_output;
 
 wire [23:0]   	PHR_transmitter;
-wire [72:0]		MPDU_transmitter;
+wire [71:0]		MPDU_transmitter;
 
 wire [23:0] received_PHR_block;
 wire [2119:0] PSDU_received;
@@ -63,7 +63,7 @@ uwb_phy_final my_uwb(
   .serial_output (serial_output),
   .start_transmitter (pulse_start),
   .PHR_transmitter_reg (PHR_transmitter),
-  .MPDU_transmitter_reg ({ {2047{1'b0}}, MPDU_transmitter}),
+  .MPDU_transmitter_reg ({ {2048{1'b0}}, MPDU_transmitter}),
   .PHR_receiver_reg (received_PHR_block),
   .PSDU_receiver_reg (PSDU_received)
 );
@@ -172,8 +172,6 @@ vio_0 my_viocore (
  .probe_out0(input_receiver_PHR),  // output wire [39 : 0] probe_out0
  .probe_out1(input_receiver_PSDU),  // output wire [125 : 0] probe_out1
  .probe_out2(PHR_transmitter),  // output wire [23 : 0] probe_out2
- .probe_out3(MPDU_transmitter)  // output wire [72 : 0] probe_out3
+ .probe_out3(MPDU_transmitter)  // output wire [71 : 0] probe_out3
 );
-
-
 endmodule

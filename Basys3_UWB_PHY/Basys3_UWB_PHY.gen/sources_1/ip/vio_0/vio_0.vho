@@ -62,7 +62,7 @@ COMPONENT vio_0
     probe_out0 : OUT STD_LOGIC_VECTOR(39 DOWNTO 0);
     probe_out1 : OUT STD_LOGIC_VECTOR(125 DOWNTO 0);
     probe_out2 : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
-    probe_out3 : OUT STD_LOGIC_VECTOR(72 DOWNTO 0) 
+    probe_out3 : OUT STD_LOGIC_VECTOR(71 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------

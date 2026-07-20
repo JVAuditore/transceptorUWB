@@ -64,7 +64,7 @@ vio_0 your_instance_name (
   .probe_out0(probe_out0),  // output wire [39 : 0] probe_out0
   .probe_out1(probe_out1),  // output wire [125 : 0] probe_out1
   .probe_out2(probe_out2),  // output wire [23 : 0] probe_out2
-  .probe_out3(probe_out3)  // output wire [72 : 0] probe_out3
+  .probe_out3(probe_out3)  // output wire [71 : 0] probe_out3
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 
