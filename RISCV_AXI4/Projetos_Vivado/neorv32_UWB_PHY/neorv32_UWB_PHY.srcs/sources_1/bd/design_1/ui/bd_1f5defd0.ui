@@ -1,0 +1,52 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.543406",
+   "Default View_TopLeft":"-136,-83",
+   "ExpandedHierarchyInLayout":"",
+   "PinnedPorts":"",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x 0 -y 290 -defaultsOSRD
+preplace port uart0_txd_o_0 -pg 1 -lvl 7 -x 2120 -y 500 -defaultsOSRD
+preplace port uart0_rxd_i_0 -pg 1 -lvl 0 -x 0 -y 560 -defaultsOSRD
+preplace port write_input -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port read_output -pg 1 -lvl 0 -x 0 -y 370 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 5 -x 1670 -y 620 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 170 -y 300 -defaultsOSRD
+preplace inst neorv32_vivado_ip_0 -pg 1 -lvl 4 -x 1230 -y 580 -defaultsOSRD
+preplace inst rst_clk_wiz_100M -pg 1 -lvl 2 -x 500 -y 270 -defaultsOSRD
+preplace inst reset_inv_0 -pg 1 -lvl 1 -x 170 -y 430 -defaultsOSRD
+preplace inst vio_0 -pg 1 -lvl 4 -x 1230 -y 80 -defaultsOSRD
+preplace inst Serial_read_IEEE802_0 -pg 1 -lvl 3 -x 830 -y 360 -defaultsOSRD
+preplace inst Serial_write_IEEE802_0 -pg 1 -lvl 5 -x 1670 -y 160 -defaultsOSRD
+preplace inst AXIUWB_0 -pg 1 -lvl 6 -x 1960 -y 360 -defaultsOSRD
+preplace netloc neorv32_vivado_ip_0_uart0_txd_o 1 4 3 1480J 500 NJ 500 NJ
+preplace netloc uart0_rxd_i_0_1 1 0 4 NJ 560 NJ 560 NJ 560 NJ
+preplace netloc util_vector_logic_0_Res 1 1 1 330 250n
+preplace netloc sys_clock_1 1 0 1 NJ 310
+preplace netloc clk_wiz_0_clk_out1 1 1 5 320 170 680 170 970 170 1490 370 NJ
+preplace netloc clk_wiz_0_locked 1 1 1 N 310
+preplace netloc rst_clk_wiz_100M_interconnect_aresetn 1 2 3 670 260 NJ 260 1470J
+preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 2 4 690 270 950 270 1500 390 NJ
+preplace netloc read_output_1 1 0 3 NJ 370 NJ 370 NJ
+preplace netloc Serial_read_IEEE802_0_phr 1 3 1 960 80n
+preplace netloc Serial_read_IEEE802_0_mpdu 1 3 1 980 100n
+preplace netloc reset_1 1 0 1 20 290n
+preplace netloc write_input_1 1 0 5 NJ 160 NJ 160 NJ 160 NJ 160 NJ
+preplace netloc vio_0_probe_out0 1 4 1 1520 70n
+preplace netloc vio_0_probe_out1 1 4 1 1510 90n
+preplace netloc Serial_write_IEEE802_0_serial_output 1 5 1 1820 160n
+preplace netloc AXIUWB_0_serial_output 1 2 5 700 250 NJ 250 1480J 260 NJ 260 2090
+preplace netloc neorv32_vivado_ip_0_m_axi 1 4 1 N 560
+preplace netloc axi_interconnect_0_M00_AXI 1 5 1 1830 330n
+levelinfo -pg 1 0 170 500 830 1230 1670 1960 2120
+pagesize -pg 1 -db -bbox -sgen -140 0 2260 740
+"
+}
+{
+   "da_axi4_cnt":"15",
+   "da_board_cnt":"19",
+   "da_bram_cntlr_cnt":"6",
+   "da_clkrst_cnt":"20"
+}
